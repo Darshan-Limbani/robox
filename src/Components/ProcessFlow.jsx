@@ -1,7 +1,7 @@
 import ProcessStep from "./ProcessStep";
 import uFirstRedeem from "../assets/uFirstReedem.svg";
 import uGetReward from "../assets/uGetReward.svg";
-import uRegister from "../assets/uregister.svg";
+import uRegister from "../assets/uRegister.svg";
 
 export default function ProcessFlow() {
   return (
