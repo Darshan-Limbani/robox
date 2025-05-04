@@ -1,9 +1,10 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import coin from "../assets/coin.svg";
+import { usePoints } from "../PointsProvider.jsx";
 
 function ProfileHeader({ profileImageSrc, title, count, onClick }) {
   
+  const { points } = usePoints();
   const navigate = useNavigate();
   const handleClick = () => {
     navigate(-1);
@@ -20,14 +21,13 @@ function ProfileHeader({ profileImageSrc, title, count, onClick }) {
         />
         <span className="my-auto basis-auto">{title}</span>
       </div>
-      {count && <>
-        <div
-          className="flex items-center flex-row gap-2 overflow-hidden py-2.5 text-sm font-medium text-center whitespace-nowrap border border-solid bg-neutral-100 border-cyan-950 border-opacity-10 rounded-[100px] pr-[15px]">
-          <img src={coin} alt="Coin" className="object-contain shrink-0 aspect-square w-[20px]  ml-2.5"/>
-          {count}
-        </div>
-      </>
-      }
+      
+      <div
+        className="flex items-center flex-row gap-2 overflow-hidden py-2.5 text-sm font-medium text-center whitespace-nowrap border border-solid bg-neutral-100 border-cyan-950 border-opacity-10 rounded-[100px] pr-[15px]">
+        <img src={coin} alt="Coin" className="object-contain shrink-0 aspect-square w-[20px]  ml-2.5"/>
+        {points || 0}
+      </div>
+    
     </section>
   );
 }

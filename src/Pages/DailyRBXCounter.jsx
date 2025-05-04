@@ -2,7 +2,7 @@ import React from "react";
 import ProfileHeader from "../Components/ProfileHeader.jsx";
 import FeatureCard from "../Components/FeatureCard.jsx";
 import { useNavigate } from "react-router-dom";
-import { ROUTES } from "../utils/constansts.js";
+import { ROUTES } from "../utils/constants.js";
 import rDollor from "../assets/r_dollor.svg"
 import logic_quiz from "../assets/logic_quiz.svg"
 import back_arr from "../assets/back_arr.svg";
