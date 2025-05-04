@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate, Outlet } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import { ROUTES } from "../utils/constansts.js";
+import { ROUTES } from "../utils/constants.js";
 
 const Home = lazy(() => import("../Pages/Home.jsx"));
 const DailyRbxCounter = lazy(() => import("../Pages/DailyRBXCounter.jsx"));
@@ -75,6 +75,14 @@ const routers = createBrowserRouter([
   },
   {
     path: ROUTES.SCRATCH_CARD,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <ScratchCard/>
+      </Suspense>
+    )
+  },
+  {
+    path: ROUTES.LUCKY_SCRATCH,
     element: (
       <Suspense fallback={<div>Loading...</div>}>
         <ScratchCard/>

@@ -24,7 +24,7 @@ export default function ProcessStep({
       alt={title}
       className={`object-contain shrink-0 max-w-full ${
         imagePosition === "right"
-          ? "self-start aspect-[1.34] rounded-[536px] shadow-[0px_27px_27px_rgba(0,53,65,0.2)] w-[134px]"
+          ? "self-start aspect-[1.34] w-[134px]"
           : "aspect-[1.06] w-[120px]"
       }`}
     />
