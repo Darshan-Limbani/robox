@@ -125,7 +125,7 @@ const Home = () => {
   
   return (
     <main
-      className="flex overflow-hidden flex-col text-black bg-white w-[360px] max-w-[360px] rounded-[40px] justify-center">
+      className="flex overflow-hidden flex-col text-black bg-white w-full max-w-[360px] rounded-[40px] justify-center">
       {/*<StatusBar*/}
       {/*  time="9:30"*/}
       {/*  iconSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/d88bb058f60c12fbdd8661d6f3e97248a37825eb?placeholderIfAbsent=true"*/}
@@ -159,7 +159,7 @@ const Home = () => {
         </div>
       </section>*/}
       
-      <article className="px-px text-sm text-center text-black max-w-[311px]">
+      <article className="px-px text-sm text-center text-black max-w-[360px] self-center mt-5">
         <div className="w-full py-7 text-sm">
           <section className="flex gap-5 justify-center items-start w-full">
             {firstRow.map((item, index) => (
