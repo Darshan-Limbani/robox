@@ -19,7 +19,7 @@ const ScratchAndWin = ({ isScratchCard }) => {
   
   const onScratch = () => {
     if (!canUseFeature(isScratchCard ? 'scratch' : 'lucky-scratch')) {
-      alert('Scratch limit reached for today!');
+      alert('Scratch limit reached for today! Please try again tomorrow.');
       return;
     }
     setIsOpen(true);
