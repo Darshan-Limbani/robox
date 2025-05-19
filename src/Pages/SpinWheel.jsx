@@ -1,5 +1,5 @@
 import React from "react";
-import SpinWheelComponent from "../Components/SpinWHeelComponent.jsx";
+import SpinWheelComponent from "../Components/SpinWheelComponent.jsx";
 import ProfileHeader from "../Components/ProfileHeader.jsx";
 import back_arr from "../assets/back_arr.svg";
 

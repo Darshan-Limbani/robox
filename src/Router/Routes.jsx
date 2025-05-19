@@ -4,7 +4,7 @@ import { ROUTES } from "../utils/constants.js";
 
 const Home = lazy(() => import("../Pages/Home.jsx"));
 const DailyRbxCounter = lazy(() => import("../Pages/DailyRBXCounter.jsx"));
-const SpinWheel = lazy(() => import("../Pages/SpinWHeel.jsx"));
+const SpinWheel = lazy(() => import("../Pages/SpinWheel.jsx"));
 const ScratchCard = lazy(() => import("../Pages/ScratchCard.jsx"));
 const HowToWin = lazy(() => import("../Pages/HowToWin.jsx"));
 const Redeem = lazy(() => import("../Pages/Redeem.jsx"));
