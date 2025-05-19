@@ -1,3 +1,10 @@
+/*targer canvas element inside a div  with class name sw-wrapper*/
+.sw-wrapper > div {
+  width: 250px;
+  height: 250px;
+  rotate: -15deg;
+}
+
 .ripple-effect {
   position: relative;
   overflow: hidden;
