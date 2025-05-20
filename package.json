@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.14.0",
     "@tailwindcss/vite": "^4.0.15",
     "react": "^19.0.0",
+    "react-ad-manager": "^1.1.9",
     "react-custom-roulette": "^1.4.1",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.4.0",

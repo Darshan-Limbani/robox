@@ -10,63 +10,15 @@ import lucky_scratch from "../assets/lucky_scratch.svg";
 import how_to_win from "../assets/how_to_win.svg";
 import reedem_btn from "../assets/reedem_btn.svg";
 import { IconGridItem } from "../Components/IconGridItem.jsx";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DialogBox from "../Components/DialogBox.jsx";
+// import AdSlot from "../Components/AdSlot.jsx";
 
-
-const firstRow = [
-  {
-    imageSrc: new_btn,
-    label: "Daily New RBX",
-    width: "90px"
-  },
-  {
-    imageSrc: spin_wheel,
-    label: "Spin Wheel",
-    width: "90px"
-  },
-  {
-    imageSrc: win_Scratch,
-    label: "Win Scratch",
-    width: "90px"
-  }
-];
-
-const secondRow = [
-  {
-    imageSrc: lucky_scratch,
-    label: "Lucky Scratch",
-    width: "87px"
-  },
-  {
-    imageSrc: how_to_win,
-    label: "How to Win",
-    width: "90px"
-  },
-  {
-    imageSrc: reedem_btn,
-    label: "Redeem",
-    width: "90px"
-  }
-];
 
 
 const Home = () => {
   
   const navigate = useNavigate();
-  
-  const [isOpen, setIsOpen] = useState(true)
-  
-  /*const handleRxcClick = () => {
-    
-    navigate(ROUTES.DAILY_RBX_COUNTER);
-    
-  }
-  
-  const handleRedeemClick = () => {
-    navigate(ROUTES.REDEEM);
-  }*/
-  
   
   const firstRow = [
     {
@@ -130,6 +82,19 @@ const Home = () => {
       {/*  time="9:30"*/}
       {/*  iconSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/d88bb058f60c12fbdd8661d6f3e97248a37825eb?placeholderIfAbsent=true"*/}
       {/*/>*/}
+      
+      
+      {/*<div id='div-gpt-ad-1747759271642-0' style={{*/}
+      {/*  minWidth: "120px",*/}
+      {/*  minHeight: "30px"*/}
+      {/*}}>*/}
+      {/*  <script>*/}
+      {/*    googletag.cmd.push(function() {googletag.display('div-gpt-ad-1747759271642-0')});*/}
+      {/*  </script>*/}
+      {/*</div>*/}
+      
+      {/*<AdSlot />*/}
+      
       <ProfileHeader
         profileImageSrc={humberg}
         title="RBC Counter"
@@ -158,6 +123,7 @@ const Home = () => {
           />
         </div>
       </section>*/}
+      
       
       <article className="px-px text-sm text-center text-black max-w-[360px] self-center mt-5">
         <div className="w-full py-7 text-sm">
