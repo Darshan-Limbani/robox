@@ -148,6 +148,7 @@ const Home = () => {
             adUnit='/21775744923/example/interstitial'
             name='div-ad-demo'
             size={[300, 250]}
+            type={"INTERSTITIAL"}
           />
           <div className="mt-5">
             <section className="flex gap-5 justify-center items-start w-full">
