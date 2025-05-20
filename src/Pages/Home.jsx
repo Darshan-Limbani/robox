@@ -12,6 +12,7 @@ import reedem_btn from "../assets/reedem_btn.svg";
 import { IconGridItem } from "../Components/IconGridItem.jsx";
 import React, { useEffect, useState } from "react";
 import DialogBox from "../Components/DialogBox.jsx";
+import { Ad } from "react-ad-manager";
 // import AdSlot from "../Components/AdSlot.jsx";
 
 
@@ -138,6 +139,11 @@ const Home = () => {
               />
             ))}
           </section>
+          <Ad
+            adUnit='/21775744923/example/fixed-size-banner'
+            name='div-ad-demo'
+            size={[300, 250]}
+          />
           <div className="mt-5">
             <section className="flex gap-5 justify-center items-start w-full">
               {secondRow.map((item, index) => (
