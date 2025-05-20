@@ -144,6 +144,11 @@ const Home = () => {
             name='div-ad-demo'
             size={[300, 250]}
           />
+          <Ad
+            adUnit='/21775744923/example/interstitial'
+            name='div-ad-demo'
+            size={[300, 250]}
+          />
           <div className="mt-5">
             <section className="flex gap-5 justify-center items-start w-full">
               {secondRow.map((item, index) => (
