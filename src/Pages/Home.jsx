@@ -146,8 +146,8 @@ const Home = () => {
           />
           <Ad
             adUnit='/21775744923/example/interstitial'
-            name='div-ad-demo'
-            size={[300, 250]}
+            name='div-ad-demo1'
+            // size={[300, 250]}
             type={"INTERSTITIAL"}
           />
           <div className="mt-5">
