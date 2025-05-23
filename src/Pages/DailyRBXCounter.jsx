@@ -6,7 +6,7 @@ import { ROUTES } from "../utils/constants.js";
 import rDollor from "../assets/r_dollor.svg"
 import logic_quiz from "../assets/logic_quiz.svg"
 import back_arr from "../assets/back_arr.svg";
-import { Ad } from "react-ad-manager";
+import { Ad, AdConfig, AdScript } from "react-ad-manager";
 function DailyRBXCounter() {
   
   const navigate = useNavigate();
@@ -73,6 +73,7 @@ function DailyRBXCounter() {
             description={featureCards[1].description}
           />
         </div>
+        
         <Ad
           adUnit='/21775744923/example/fixed-size-banner'
           name='div-ad-demo8'
