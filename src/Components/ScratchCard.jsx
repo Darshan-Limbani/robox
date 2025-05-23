@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import ScratchCard from "react-scratchcard-v6"
 import scratch from "../assets/scratch.png"
 import { canUseFeature, incrementUsage } from "../utils/PointsUtils.js";
 import { usePoints } from "../PointsProvider.jsx";
 import Dialog from "./DialogBox.jsx";
+import { Ad } from "react-ad-manager";
 
 
 const reward = [5, 7, 10, 12, 15, 18, 20, 22, 25];
@@ -63,6 +64,12 @@ const ScratchAndWin = ({ isScratchCard }) => {
           </div>}
       
       </ScratchCard>
+      
+      <Ad
+        adUnit='/21775744923/example/fixed-size-banner'
+        name='div-ad-demo10'
+        size={[300, 250]}
+      />
     </>
   );
 };

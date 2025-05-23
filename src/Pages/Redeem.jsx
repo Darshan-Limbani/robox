@@ -3,6 +3,7 @@ import { RedeemInfo } from "../Components/RedeemInfo.jsx";
 import { RedeemButton } from "../Components/RedeemButton.jsx";
 import ProfileHeader from "../Components/ProfileHeader.jsx";
 import back_arr from "../assets/back_arr.svg";
+import { Ad } from "react-ad-manager";
 
 function Redeem() {
   return (
@@ -13,6 +14,11 @@ function Redeem() {
         title={"Redeem To Account"}
       />
       <RedeemInfo/>
+      <Ad
+        adUnit='/21775744923/example/fixed-size-banner'
+        name='div-ad-demo9'
+        size={[300, 250]}
+      />
       <div className={" flex  flex-col w-full mt-5 gap-5"}>
         <RedeemButton>Redeem Server 1</RedeemButton>
         <RedeemButton>Redeem Server 2</RedeemButton>
