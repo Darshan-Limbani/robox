@@ -1,6 +1,7 @@
 
 import React from "react";
 import ProcessFlow from "./ProcessFlow";
+import { Ad } from "react-ad-manager";
 
 export default function InstructionsContent() {
   return (
@@ -11,6 +12,11 @@ export default function InstructionsContent() {
         scratch the PB, Redeem will be available once you reach the minimum robux balance on your account and completing
         the steps announcing
       </p>
+      <Ad
+        adUnit='/21775744923/example/fixed-size-banner'
+        name='div-ad-demo9'
+        size={[300, 250]}
+      />
       <ProcessFlow/>
     </section>
   );

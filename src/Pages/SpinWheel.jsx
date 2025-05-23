@@ -2,6 +2,7 @@ import React from "react";
 import SpinWheelComponent from "../Components/SpinWheelComponent.jsx";
 import ProfileHeader from "../Components/ProfileHeader.jsx";
 import back_arr from "../assets/back_arr.svg";
+import { Ad } from "react-ad-manager";
 
 const SpinWheel = () => {
   return (
@@ -14,6 +15,11 @@ const SpinWheel = () => {
         <div className={"w-full flex flex-col justify-center items-center"}>
           <SpinWheelComponent/>
         </div>
+        <Ad
+          adUnit='/21775744923/example/fixed-size-banner'
+          name='div-ad-demo'
+          size={[300, 250]}
+        />
       </main>
     </>
   );

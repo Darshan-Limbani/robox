@@ -1,6 +1,7 @@
 
 
-import { useState } from "react";
+import React, { useState } from "react";
+import { Ad } from "react-ad-manager";
 
 const InputSection = () => {
   const [days, setDays] = useState("");
@@ -28,6 +29,11 @@ const InputSection = () => {
       >
         Count Now
       </button>
+      <Ad
+        adUnit='/21775744923/example/fixed-size-banner'
+        name='div-ad-demo7'
+        size={[300, 250]}
+      />
     </section>
   );
 };
