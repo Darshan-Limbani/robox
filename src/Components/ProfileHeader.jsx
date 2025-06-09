@@ -11,7 +11,7 @@ function ProfileHeader({ profileImageSrc, title, count, onClick }) {
   }
   
   return (
-    <section className="flex overflow-hidden gap-2 my-1 justify-between py-2 w-full bg-white">
+    <section className="flex gap-2 my-1 justify-between py-2 w-full bg-white">
       <div className="flex gap-4 text-lg font-bold">
         <img
           src={profileImageSrc}

@@ -7,6 +7,7 @@ import rDollor from "../assets/r_dollor.svg"
 import logic_quiz from "../assets/logic_quiz.svg"
 import back_arr from "../assets/back_arr.svg";
 import { Ad, AdConfig, AdScript } from "react-ad-manager";
+import Footer from "../Components/Footer.jsx";
 function DailyRBXCounter() {
   
   const navigate = useNavigate();
@@ -50,12 +51,14 @@ function DailyRBXCounter() {
   ];
   
   return (
-    <main className="flex overflow-hidden flex-col text-black bg-white w-full max-w-[360px] rounded-[40px]">
+    <main className="flex overflow-hidden flex-col text-black bg-white w-full max-w-[360px] h-full ">
+      <div className={"h-full flex flex-col"}>
       <ProfileHeader
       profileImageSrc={back_arr}
         title="RBC Calculator"
         count="20"
       />
+      
       <div className={"flex items-center"}>
       
       <section className="flex items-center flex-col mt-2.5 w-full">
@@ -74,11 +77,11 @@ function DailyRBXCounter() {
           />
         </div>
         
-        <Ad
-          adUnit='/21775744923/example/fixed-size-banner'
-          name='div-ad-demo8'
-          size={[300, 250]}
-        />
+        {/*<Ad*/}
+        {/*  adUnit='/21775744923/example/fixed-size-banner'*/}
+        {/*  name='div-ad-demo8'*/}
+        {/*  size={[300, 250]}*/}
+        {/*/>*/}
         <div className="flex gap-4 items-center mt-4 w-full">
           <FeatureCard
             onClick={featureCards[2].onClick}
@@ -96,6 +99,10 @@ function DailyRBXCounter() {
         </div>
       </section>
       </div>
+      
+      </div>
+      
+      <Footer/>
       
     </main>
   );

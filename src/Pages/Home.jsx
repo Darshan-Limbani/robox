@@ -13,6 +13,7 @@ import { IconGridItem } from "../Components/IconGridItem.jsx";
 import React, { useEffect, useState } from "react";
 import DialogBox from "../Components/DialogBox.jsx";
 import { Ad } from "react-ad-manager";
+import Footer from "../Components/Footer.jsx";
 // import AdSlot from "../Components/AdSlot.jsx";
 
 
@@ -78,23 +79,7 @@ const Home = () => {
   
   return (
     <main
-      className="flex overflow-hidden flex-col text-black bg-white w-full max-w-[360px] rounded-[40px] justify-center">
-      {/*<StatusBar*/}
-      {/*  time="9:30"*/}
-      {/*  iconSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/d88bb058f60c12fbdd8661d6f3e97248a37825eb?placeholderIfAbsent=true"*/}
-      {/*/>*/}
-      
-      
-      {/*<div id='div-gpt-ad-1747759271642-0' style={{*/}
-      {/*  minWidth: "120px",*/}
-      {/*  minHeight: "30px"*/}
-      {/*}}>*/}
-      {/*  <script>*/}
-      {/*    googletag.cmd.push(function() {googletag.display('div-gpt-ad-1747759271642-0')});*/}
-      {/*  </script>*/}
-      {/*</div>*/}
-      
-      {/*<AdSlot />*/}
+      className="flex flex-col h-full text-black bg-white w-full max-w-[360px]">
       
       <ProfileHeader
         profileImageSrc={humberg}
@@ -103,10 +88,10 @@ const Home = () => {
         onClick={() => {
         }}
       />
-      <img
-        src={home_banner}
-        className="object-contain self-center mt-2.5 w-full rounded-3xl aspect-[1.64] max-w-[328px]"
-        alt="RBC Counter main image"
+      <Ad
+        adUnit='/21775744923/example/fixed-size-banner'
+        name='div-ad-demo'
+        size={[300, 250]}
       />
       {/*<section className="self-center mt-8 w-full text-sm text-center max-w-[310px]">
         <div className="flex gap-5 justify-center items-start w-full cursor-pointer">
@@ -126,7 +111,7 @@ const Home = () => {
       </section>*/}
       
       
-      <article className="px-px text-sm text-center text-black max-w-[360px] self-center mt-5">
+      <article className="px-px h-full text-sm text-center text-black max-w-[360px] self-center mt-5">
         <div className="w-full py-7 text-sm">
           <section className="flex gap-5 justify-center items-start w-full">
             {firstRow.map((item, index) => (
@@ -139,11 +124,7 @@ const Home = () => {
               />
             ))}
           </section>
-          <Ad
-            adUnit='/21775744923/example/fixed-size-banner'
-            name='div-ad-demo'
-            size={[300, 250]}
-          />
+          
           <Ad
             adUnit='/21775744923/example/interstitial'
             name='div-ad-demo1'
@@ -165,6 +146,8 @@ const Home = () => {
           </div>
         </div>
       </article>
+      <Footer/>
+      
     </main>
   );
 }
