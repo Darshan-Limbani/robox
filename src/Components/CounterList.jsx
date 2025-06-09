@@ -1,4 +1,3 @@
-import React from "react";
 import CounterItem from "./CounterItem";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../utils/constants.js";

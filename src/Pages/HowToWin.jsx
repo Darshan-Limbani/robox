@@ -1,4 +1,3 @@
-import React from "react";
 import ProfileHeader from "../Components/ProfileHeader.jsx";
 import InstructionsContent from "../Components/InstructionsContent.jsx";
 import back_arr from "../assets/back_arr.svg";

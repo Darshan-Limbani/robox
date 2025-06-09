@@ -1,4 +1,3 @@
-import React from "react";
 
 export const IconGridItem = ({ imageSrc, label, width = "90px", onClick }) => {
   return (

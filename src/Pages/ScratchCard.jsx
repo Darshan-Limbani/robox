@@ -3,7 +3,6 @@ import back_arr from "../assets/back_arr.svg";
 import ScratchAndWin from "../Components/ScratchCard.jsx";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import Footer from "../Components/Footer.jsx";
 
 const ScratchCard = () => {
   
@@ -32,8 +31,6 @@ const ScratchCard = () => {
           <ScratchAndWin isScratchCard={isScratchCard}/>
         </div>
       </div>
-      <Footer/>
-    
     </main>
   );
 }

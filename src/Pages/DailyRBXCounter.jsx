@@ -1,4 +1,3 @@
-import React from "react";
 import ProfileHeader from "../Components/ProfileHeader.jsx";
 import FeatureCard from "../Components/FeatureCard.jsx";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +6,7 @@ import rDollor from "../assets/r_dollor.svg"
 import logic_quiz from "../assets/logic_quiz.svg"
 import back_arr from "../assets/back_arr.svg";
 import { Ad, AdConfig, AdScript } from "react-ad-manager";
-import Footer from "../Components/Footer.jsx";
+
 function DailyRBXCounter() {
   
   const navigate = useNavigate();
@@ -101,9 +100,6 @@ function DailyRBXCounter() {
       </div>
       
       </div>
-      
-      <Footer/>
-      
     </main>
   );
 }

@@ -1,5 +1,5 @@
+import { Fragment } from "react";
 
-import React from "react";
 
 export default function ProcessStep({
                                       title,
@@ -10,10 +10,10 @@ export default function ProcessStep({
   const content = (
     <div className="my-auto">
       {title.split("\n").map((line, index) => (
-        <React.Fragment key={index}>
+        <Fragment key={index}>
           {line}
           {index < title.split("\n").length - 1 && <br/>}
-        </React.Fragment>
+        </Fragment>
       ))}
     </div>
   );

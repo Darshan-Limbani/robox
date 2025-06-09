@@ -10,11 +10,7 @@ import lucky_scratch from "../assets/lucky_scratch.svg";
 import how_to_win from "../assets/how_to_win.svg";
 import reedem_btn from "../assets/reedem_btn.svg";
 import { IconGridItem } from "../Components/IconGridItem.jsx";
-import React, { useEffect, useState } from "react";
-import DialogBox from "../Components/DialogBox.jsx";
 import { Ad } from "react-ad-manager";
-import Footer from "../Components/Footer.jsx";
-// import AdSlot from "../Components/AdSlot.jsx";
 
 
 
@@ -146,8 +142,6 @@ const Home = () => {
           </div>
         </div>
       </article>
-      <Footer/>
-      
     </main>
   );
 }

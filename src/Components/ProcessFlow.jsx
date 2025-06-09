@@ -4,7 +4,6 @@ import uGetReward from "../assets/uGetReward.svg";
 import uRegister from "../assets/uRegister.svg";
 import ArrDown from "../assets/ArrDown.svg";
 import { Ad } from "react-ad-manager";
-import React from "react";
 
 export default function ProcessFlow() {
   return (
