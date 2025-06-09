@@ -16,11 +16,14 @@ function App() {
     };
   }, []);
   return (
-    <PointsProvider>
-      <PageWrapper>
-        <RouterProvider router={routers}/>
-      </PageWrapper>
-    </PointsProvider>
+    <div className={"flex h-full flex-col justify-between overflow-auto items-center"}>
+      <PointsProvider>
+        <PageWrapper>
+          <RouterProvider router={routers}/>
+        </PageWrapper>
+      </PointsProvider>
+      {/*<Footer/>*/}
+    </div>
   )
 }
 

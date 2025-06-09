@@ -9,5 +9,9 @@ export const ROUTES = {
   REDEEM: '/redeem',
   INSTRUCTIONS: 'instructions',
   CALCULATOR: 'calculator',
-  COUNT: "count"
+  COUNT: "count",
+  ABOUT:"/about",
+  CONTACT:"/contact",
+  PRIVACY_POLICY:"/privacy-policy",
+  TERM_SERVICE:"/terms-and-service"
 }

@@ -1,6 +1,10 @@
 import { createBrowserRouter, Navigate, Outlet } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { ROUTES } from "../utils/constants.js";
+import About from "../Pages/About.jsx";
+import PrivacyPolicy from "../Pages/PrivacyPolicy.jsx";
+import TermsOfService from "../Pages/TermsOfService.jsx";
+import Contact from "../Pages/Contact.jsx";
 
 const Home = lazy(() => import("../Pages/Home.jsx"));
 const DailyRbxCounter = lazy(() => import("../Pages/DailyRBXCounter.jsx"));
@@ -104,6 +108,22 @@ const routers = createBrowserRouter([
         <Redeem/>
       </Suspense>
     )
+  },
+  {
+    path: ROUTES.ABOUT,
+    element: (<About/>)
+  },
+  {
+    path: ROUTES.PRIVACY_POLICY,
+    element: (<PrivacyPolicy/>)
+  },
+  {
+    path: ROUTES.TERM_SERVICE,
+    element: (<TermsOfService/>)
+  },
+  {
+    path: ROUTES.CONTACT,
+    element: (<Contact/>)
   }
 ]);
 

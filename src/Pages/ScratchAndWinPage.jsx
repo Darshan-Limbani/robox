@@ -5,7 +5,7 @@ import ScratchAndWin from "../Components/ScratchCard.jsx";
 
 const ScratchAndWinPage = () => {
   return (
-    <main className="flex overflow-hidden flex-col text-sm text-black bg-white max-w-[360px] w-full rounded-[40px]">
+    <main className="flex overflow-hidden flex-col text-sm text-black bg-white max-w-[360px] w-full ">
       <ProfileHeader
         profileImageSrc={back_arr}
         title={"RBC Calculator"}
