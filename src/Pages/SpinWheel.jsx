@@ -1,9 +1,7 @@
-import React from "react";
 import SpinWheelComponent from "../Components/SpinWheelComponent.jsx";
 import ProfileHeader from "../Components/ProfileHeader.jsx";
 import back_arr from "../assets/back_arr.svg";
 import { Ad } from "react-ad-manager";
-import Footer from "../Components/Footer.jsx";
 
 const SpinWheel = () => {
   return (
@@ -24,7 +22,6 @@ const SpinWheel = () => {
             size={[300, 250]}
           />
         </div>
-        <Footer/>
       </main>
     </>
   );

@@ -5,6 +5,7 @@ import About from "../Pages/About.jsx";
 import PrivacyPolicy from "../Pages/PrivacyPolicy.jsx";
 import TermsOfService from "../Pages/TermsOfService.jsx";
 import Contact from "../Pages/Contact.jsx";
+import Layout from "../Components/Layout.jsx";
 
 const Home = lazy(() => import("../Pages/Home.jsx"));
 const DailyRbxCounter = lazy(() => import("../Pages/DailyRBXCounter.jsx"));
@@ -15,116 +16,116 @@ const Redeem = lazy(() => import("../Pages/Redeem.jsx"));
 const BcRBXCounter = lazy(() => import("../Pages/BcRBXCounter.jsx"));
 const Counter = lazy(() => import("../Pages/Counter.jsx"));
 
-const routers = createBrowserRouter([
+const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Navigate to={ROUTES.HOME} replace/>,
-  },
-  {
-    path: ROUTES.HOME,
-    element: (
-      <Suspense fallback={<div>Loading...</div>}>
-        <Home/>
-      </Suspense>
-    ),
-    index: true
-  },
-  {
-    path: ROUTES.DAILY_RBX_COUNTER,
-    element: (
-      <Outlet/>
-    ),
+    element: <Layout><Outlet /></Layout>,
     children: [
       {
-        path: "",
+        index: true,
+        element: <Navigate to={ROUTES.HOME} replace />
+      },
+      {
+        path: ROUTES.HOME,
         element: (
           <Suspense fallback={<div>Loading...</div>}>
-            <DailyRbxCounter/>
+            <Home />
           </Suspense>
         )
       },
       {
-        path: ROUTES.BC_RBX_COUNTER,
-        element: (
-          <Outlet/>
-        ),
+        path: ROUTES.DAILY_RBX_COUNTER,
+        element: <Outlet />,
         children: [
           {
-            path: "",
+            index: true,
             element: (
               <Suspense fallback={<div>Loading...</div>}>
-                <BcRBXCounter/>
-              </Suspense>
-            ),
-          },
-          {
-            path: ROUTES.COUNT,
-            element: (
-              <Suspense fallback={<div>Loading...</div>}>
-                <Counter/>
+                <DailyRbxCounter />
               </Suspense>
             )
+          },
+          {
+            path: ROUTES.BC_RBX_COUNTER,
+            element: <Outlet />,
+            children: [
+              {
+                index: true,
+                element: (
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <BcRBXCounter />
+                  </Suspense>
+                )
+              },
+              {
+                path: ROUTES.COUNT,
+                element: (
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <Counter />
+                  </Suspense>
+                )
+              }
+            ]
           }
         ]
+      },
+      {
+        path: ROUTES.SPIN_WHEEL,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <SpinWheel />
+          </Suspense>
+        )
+      },
+      {
+        path: ROUTES.SCRATCH_CARD,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <ScratchCard />
+          </Suspense>
+        )
+      },
+      {
+        path: ROUTES.LUCKY_SCRATCH,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <ScratchCard />
+          </Suspense>
+        )
+      },
+      {
+        path: ROUTES.HOW_TO_WIN,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <HowToWin />
+          </Suspense>
+        )
+      },
+      {
+        path: ROUTES.REDEEM,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Redeem />
+          </Suspense>
+        )
+      },
+      {
+        path: ROUTES.ABOUT,
+        element: <About />
+      },
+      {
+        path: ROUTES.PRIVACY_POLICY,
+        element: <PrivacyPolicy />
+      },
+      {
+        path: ROUTES.TERM_SERVICE,
+        element: <TermsOfService />
+      },
+      {
+        path: ROUTES.CONTACT,
+        element: <Contact />
       }
     ]
-  },
-  {
-    path: ROUTES.SPIN_WHEEL,
-    element: (
-      <Suspense fallback={<div>Loading...</div>}>
-        <SpinWheel/>
-      </Suspense>
-    )
-  },
-  {
-    path: ROUTES.SCRATCH_CARD,
-    element: (
-      <Suspense fallback={<div>Loading...</div>}>
-        <ScratchCard/>
-      </Suspense>
-    )
-  },
-  {
-    path: ROUTES.LUCKY_SCRATCH,
-    element: (
-      <Suspense fallback={<div>Loading...</div>}>
-        <ScratchCard/>
-      </Suspense>
-    )
-  },
-  {
-    path: ROUTES.HOW_TO_WIN,
-    element: (
-      <Suspense fallback={<div>Loading...</div>}>
-        <HowToWin/>
-      </Suspense>
-    )
-  },
-  {
-    path: ROUTES.REDEEM,
-    element: (
-      <Suspense fallback={<div>Loading...</div>}>
-        <Redeem/>
-      </Suspense>
-    )
-  },
-  {
-    path: ROUTES.ABOUT,
-    element: (<About/>)
-  },
-  {
-    path: ROUTES.PRIVACY_POLICY,
-    element: (<PrivacyPolicy/>)
-  },
-  {
-    path: ROUTES.TERM_SERVICE,
-    element: (<TermsOfService/>)
-  },
-  {
-    path: ROUTES.CONTACT,
-    element: (<Contact/>)
   }
 ]);
 
-export default routers;
+export default router;

@@ -1,10 +1,8 @@
-import React from "react";
 import { RedeemInfo } from "../Components/RedeemInfo.jsx";
 import { RedeemButton } from "../Components/RedeemButton.jsx";
 import ProfileHeader from "../Components/ProfileHeader.jsx";
 import back_arr from "../assets/back_arr.svg";
 import { Ad } from "react-ad-manager";
-import Footer from "../Components/Footer.jsx";
 
 function Redeem() {
   return (
@@ -28,7 +26,6 @@ function Redeem() {
       
       
       </div>
-      <Footer/>
     </main>
   );
 }

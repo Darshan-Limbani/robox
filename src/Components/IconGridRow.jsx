@@ -1,4 +1,3 @@
-import React from "react";
 import { IconGridItem } from "./IconGridItem";
 
 export const IconGridRow = ({ items }) => {

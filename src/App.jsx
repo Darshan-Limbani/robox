@@ -1,7 +1,6 @@
 import './App.css'
 import { RouterProvider } from "react-router-dom";
-import routers from "./Router/Routes.jsx";
-import PageWrapper from "./Pages/PageWrapper.jsx";
+import router from "./Router/Routes.jsx";
 import { PointsProvider } from "./PointsProvider.jsx";
 import { useEffect } from "react";
 
@@ -15,14 +14,12 @@ function App() {
       document.body.removeChild(script);
     };
   }, []);
+
   return (
-    <div className={"flex h-full flex-col justify-between overflow-auto items-center"}>
+    <div className="flex h-full flex-col justify-between items-center">
       <PointsProvider>
-        <PageWrapper>
-          <RouterProvider router={routers}/>
-        </PageWrapper>
+        <RouterProvider router={router} />
       </PointsProvider>
-      {/*<Footer/>*/}
     </div>
   )
 }

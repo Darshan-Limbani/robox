@@ -1,4 +1,3 @@
-import React from "react";
 import ArrRight from "../assets/ArrRight.svg"
 
 const CounterItem = ({ title, onClick }) => {

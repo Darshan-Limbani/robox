@@ -1,4 +1,3 @@
-import React from "react";
 import CounterList from "../Components/CounterList.jsx";
 import ProfileHeader from "../Components/ProfileHeader.jsx";
 import back_arr from "../assets/back_arr.svg";

@@ -1,5 +1,4 @@
 
-import React from "react";
 import ProcessFlow from "./ProcessFlow";
 import { Ad } from "react-ad-manager";
 import Footer from "./Footer.jsx";
@@ -19,10 +18,6 @@ export default function InstructionsContent() {
         size={[300, 250]}
       />
       <ProcessFlow/>
-      <div className={"mt-5"}>
-      
-      <Footer/>
-      </div>
     </section>
   );
 }
