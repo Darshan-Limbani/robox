@@ -1,90 +1,41 @@
-import React from 'react';
-import '../styles/PrivacyPolicy.css';
-
 const PrivacyPolicy = () => {
   return (
-    <div className="privacy-container">
-      <div className="privacy-header">
-        <h1>Privacy Policy</h1>
-        <p className="last-updated">Last Updated: {new Date().toLocaleDateString()}</p>
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="mb-8 text-center">
+        <h1 className="text-3xl font-bold text-gray-800">Privacy Policy</h1>
       </div>
 
-      <div className="privacy-content">
-        <section className="policy-section">
-          <h2>Introduction</h2>
-          <p>
-            At Robox, we take your privacy seriously. This Privacy Policy explains how we collect,
-            use, disclose, and safeguard your information when you use our gaming platform.
-            Please read this privacy policy carefully. If you do not agree with the terms of this
-            privacy policy, please do not access the platform.
+      <div className="space-y-8">
+        <section className="bg-white rounded-lg shadow-sm p-6">
+          <h2 className="text-2xl font-semibold text-gray-700 mb-4">Introduction</h2>
+          <p className="text-gray-600 leading-relaxed">
+            Your privacy is important to us. This Privacy Policy outlines the types of personal information we collect and how we use, store, and protect it.
           </p>
         </section>
 
-        <section className="policy-section">
-          <h2>Information We Collect</h2>
-          <div className="info-types">
-            <div className="info-type">
-              <h3>Personal Information</h3>
-              <ul>
-                <li>Name and email address</li>
-                <li>Account credentials</li>
-                <li>Profile information</li>
-                <li>Payment information</li>
-              </ul>
-            </div>
-            <div className="info-type">
-              <h3>Usage Information</h3>
-              <ul>
-                <li>Game preferences and history</li>
-                <li>Device information</li>
-                <li>IP address and location data</li>
-                <li>Interaction with our platform</li>
-              </ul>
-            </div>
+        <section className="bg-white rounded-lg shadow-sm p-6">
+          <h2 className="text-2xl font-semibold text-gray-700 mb-4">Information Collection</h2>
+          <div className="text-gray-600 leading-relaxed">
+            We may collect information such as your name, email address, and other necessary data to provide a seamless experience on our platform.
           </div>
         </section>
 
-        <section className="policy-section">
-          <h2>How We Use Your Information</h2>
-          <p>We use the information we collect to:</p>
-          <ul>
-            <li>Provide and maintain our gaming services</li>
-            <li>Process your transactions</li>
-            <li>Send you updates and marketing communications</li>
-            <li>Improve our platform and user experience</li>
-            <li>Ensure platform security and prevent fraud</li>
-            <li>Comply with legal obligations</li>
-          </ul>
+        <section className="bg-white rounded-lg shadow-sm p-6">
+          <h2 className="text-2xl font-semibold text-gray-700 mb-4">Information Usage</h2>
+          <div className="text-gray-600 leading-relaxed">
+            Your data is used to improve our services, personalize your experience, and provide relevant information. We do not share your data with third parties without consent.
+          </div>
         </section>
 
-        <section className="policy-section">
-          <h2>Data Security</h2>
-          <p>
-            We implement appropriate technical and organizational security measures to protect
-            your personal information. However, no method of transmission over the Internet
-            is 100% secure, and we cannot guarantee absolute security.
-          </p>
+        <section className="bg-white rounded-lg shadow-sm p-6">
+          <h2 className="text-2xl font-semibold text-gray-700 mb-4">Data Protection</h2>
+          <div className="text-gray-600 leading-relaxed">
+            We implement security measures to protect your data. However, please note that no method of transmission over the internet is 100% secure.
+          </div>
         </section>
 
-        <section className="policy-section">
-          <h2>Your Rights</h2>
-          <p>You have the right to:</p>
-          <ul>
-            <li>Access your personal information</li>
-            <li>Correct inaccurate data</li>
-            <li>Request deletion of your data</li>
-            <li>Object to data processing</li>
-            <li>Data portability</li>
-          </ul>
-        </section>
-
-        <section className="policy-section">
-          <h2>Contact Us</h2>
-          <p>
-            If you have any questions about this Privacy Policy, please contact us at:
-            <br />
-            Email: privacy@robox.com
-          </p>
+        <section className="bg-white rounded-lg shadow-sm p-6 text-gray-600 leading-relaxed">
+          By using our platform, you agree to the collection and use of information in accordance with this Privacy Policy.
         </section>
       </div>
     </div>

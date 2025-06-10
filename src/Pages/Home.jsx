@@ -81,8 +81,6 @@ const Home = () => {
         profileImageSrc={humberg}
         title="RBC Counter"
         count="20"
-        onClick={() => {
-        }}
       />
       <Ad
         adUnit='/21775744923/example/fixed-size-banner'

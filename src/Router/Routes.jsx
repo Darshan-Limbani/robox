@@ -6,6 +6,7 @@ import PrivacyPolicy from "../Pages/PrivacyPolicy.jsx";
 import TermsOfService from "../Pages/TermsOfService.jsx";
 import Contact from "../Pages/Contact.jsx";
 import Layout from "../Components/Layout.jsx";
+import QuizPage from "../Pages/QuizPage.jsx";
 
 const Home = lazy(() => import("../Pages/Home.jsx"));
 const DailyRbxCounter = lazy(() => import("../Pages/DailyRBXCounter.jsx"));
@@ -123,6 +124,14 @@ const router = createBrowserRouter([
       {
         path: ROUTES.CONTACT,
         element: <Contact />
+      },
+      {
+        path: ROUTES.QUIZ,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <QuizPage/>
+          </Suspense>
+        )
       }
     ]
   }

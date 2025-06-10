@@ -13,5 +13,6 @@ export const ROUTES = {
   ABOUT:"/about",
   CONTACT:"/contact",
   PRIVACY_POLICY:"/privacy-policy",
-  TERM_SERVICE:"/terms-and-service"
+  TERM_SERVICE:"/terms-and-service",
+  QUIZ:"/quiz",
 }
