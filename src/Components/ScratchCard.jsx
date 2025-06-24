@@ -48,7 +48,7 @@ const ScratchAndWin = ({ isScratchCard }) => {
         targeting={[["test", "anchor"]]}
         key={`${isScratchCard ? "scratch-out-of-page-ad" : "lucky-scratch-out-of-page-ad"}`}
       />
-      
+      <span className={"touch-none"}>
       <ScratchCard
         height={280}
         width={280}
@@ -68,6 +68,7 @@ const ScratchAndWin = ({ isScratchCard }) => {
         </div>
       
       </ScratchCard>
+        </span>
     </>
   );
 };
