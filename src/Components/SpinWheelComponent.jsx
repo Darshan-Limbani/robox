@@ -17,7 +17,9 @@ import pointer2 from "./../assets/pointer_2.svg"
 import { RedeemButton } from "./RedeemButton.jsx";
 import { usePoints } from "../PointsProvider.jsx";
 import Dialog from "./DialogBox.jsx";
-import { canUseFeature, incrementUsage } from "../utils/PointsUtils.js";
+import { incrementUsage } from "../utils/PointsUtils.js";
+import { DefineAdSlot, DefineOutOfPageAdSlot } from "../utils/google-publisher-tag.jsx";
+import RewardedAdComponent from "./RewardedAdComponent.jsx";
 
 const data = [
   {
@@ -108,6 +110,7 @@ const data = [
   },
 
 ]
+// export default RewardedAdComponent;
 
 const SpinWheelComponent = () => {
   
@@ -116,18 +119,16 @@ const SpinWheelComponent = () => {
   const { add } = usePoints();
   const [isOpen, setIsOpen] = useState(false);
   const [reward, setReward] = useState();
-  console.log("Line: 119||SpinWheelComponent.jsx ~~ reward: ", reward);
   
   const handleSpinClick = () => {
-    if (!canUseFeature('spin-wheel')) {
-      alert('Scratch limit reached for today! Please try again tomorrow.');
-      return;
-    }
+    // if (!canUseFeature('spin-wheel')) {
+    //   alert('Scratch limit reached for today! Please try again tomorrow.');
+    //   return;
+    // }
     if (!mustSpin) {
       const newPrizeNumber = Math.floor(Math.random() * data.length);
       let index = (newPrizeNumber - 1 + data.length) % data.length;
-      setReward(+data[index].option)
-      console.log("Line: 118||SpinWheelComponent.jsx ~~ newPrizeNumber: ", newPrizeNumber);
+      setReward(+data[index].option);
       setPrizeNumber(newPrizeNumber);
       setMustSpin(true);
     }
@@ -141,14 +142,28 @@ const SpinWheelComponent = () => {
   
   return (
     <div>
-      {/*<SpinWHeelComponent/>*/}
+      <RewardedAdComponent adUnit={"/22639388115/rewarded_web_example"}/>
       <Dialog open={isOpen} buttonText={"Add"} count={reward} onClick={handleAdd}>
       </Dialog>
-      <div
-        style={{
-          overflow: "hidden",
-          position: "relative",
-        }}>
+      <div className={"flex items-center flex-col"}>
+        
+        <DefineAdSlot
+          size={[300, 250]}
+          adUnit={"/6355419/Travel/Europe/France/Paris"}
+        />
+        <DefineOutOfPageAdSlot
+          adUnit={"/6355419/Travel"}
+          format={"BOTTOM_ANCHOR"}
+          targeting={[["test", "anchor"]]}
+          key={"spin-out-of-page-ad"}
+        />
+        {/*<DefineOutOfPageAdSlot*/}
+        {/*  adUnit={"/6355419/Travel/Europe/France/Paris"}*/}
+        {/*  format={"REWARDED"}*/}
+        {/*  // targeting={slot.targeting}*/}
+        {/*  key={"spin-interstitial-ad"}*/}
+        {/*/>*/}
+        
         {/*<div style={{
           background: "linear-gradient(180deg, #003541 0%, #0088A7 100%)",
           width: "250px",

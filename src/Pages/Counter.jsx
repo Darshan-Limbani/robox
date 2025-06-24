@@ -7,12 +7,16 @@ const DailyRbxCounter = () => {
   
   const { state } = useLocation();
   
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const title = params.get("title");
+  
   return (
     <>
       <main className="mx-auto my-0 w-full max-w-[360px] min-h-screen bg-white max-md:w-full max-sm:w-full">
         <ProfileHeader
           profileImageSrc={back_arr}
-          title={state?.title || "BC Daily Rbx Counter"}/>
+          title={title || "BC Daily Rbx Counter"}/>
         <InputSection/>
       </main>
     </>

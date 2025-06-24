@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { DefineAdSlot, DefineOutOfPageAdSlot } from "../utils/google-publisher-tag.jsx";
+import { usePoints } from "../PointsProvider.jsx";
 
 const getRandomNumber = (max) => Math.floor(Math.random() * max) + 1;
 
@@ -49,6 +51,7 @@ const Quiz = () => {
   const [reward, setReward] = useState(0);
   const [resultMessage, setResultMessage] = useState('');
   const [resultClass, setResultClass] = useState('');
+  const { add } = usePoints();
   
   useEffect(() => {
     setQuestion(generateMathQuestion());
@@ -59,6 +62,7 @@ const Quiz = () => {
     
     if (isCorrect) {
       setReward(prev => prev + 2);
+      add(1);
       setResultMessage('Correct!');
       setResultClass('bg-green-100 text-green-800 border border-green-200');
     } else {
@@ -75,6 +79,16 @@ const Quiz = () => {
   
   return (
     <div className="max-w-2xl mx-auto p-4">
+      <DefineAdSlot
+        size={[300, 250]}
+        adUnit={"/6355419/Travel/Europe/France/Paris"}
+      />
+      <DefineOutOfPageAdSlot
+        adUnit={"/6355419/Travel"}
+        format={"BOTTOM_ANCHOR"}
+        targeting={[["test", "anchor"]]}
+        key={"quiz-comp-out-of-page-ad"}
+      />
       <div className="text-center my-8 p-4 bg-gray-50 rounded-lg shadow-sm">
         <h2 className="text-2xl font-semibold text-gray-800">
           What is {question.questionText}?
@@ -104,9 +118,9 @@ const Quiz = () => {
         </div>
       )}
       
-      <div className="text-center my-6 p-4 bg-blue-50 rounded-lg text-blue-700 text-xl">
-        <strong>Reward:</strong> ${reward}
-      </div>
+      {/*<div className="text-center my-6 p-4 bg-blue-50 rounded-lg text-blue-700 text-xl">*/}
+      {/*  <strong>Reward:</strong> ${reward}*/}
+      {/*</div>*/}
     </div>
   );
 };

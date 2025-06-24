@@ -1,5 +1,4 @@
 import { createBrowserRouter, Navigate, Outlet } from "react-router-dom";
-import { lazy, Suspense } from "react";
 import { ROUTES } from "../utils/constants.js";
 import About from "../Pages/About.jsx";
 import PrivacyPolicy from "../Pages/PrivacyPolicy.jsx";
@@ -7,6 +6,7 @@ import TermsOfService from "../Pages/TermsOfService.jsx";
 import Contact from "../Pages/Contact.jsx";
 import Layout from "../Components/Layout.jsx";
 import QuizPage from "../Pages/QuizPage.jsx";
+import { lazy } from "react";
 
 const Home = lazy(() => import("../Pages/Home.jsx"));
 const DailyRbxCounter = lazy(() => import("../Pages/DailyRBXCounter.jsx"));
@@ -19,50 +19,42 @@ const Counter = lazy(() => import("../Pages/Counter.jsx"));
 
 const router = createBrowserRouter([
   {
-    element: <Layout><Outlet /></Layout>,
+    element: <Layout><Outlet/></Layout>,
     children: [
       {
         index: true,
-        element: <Navigate to={ROUTES.HOME} replace />
+        element: <Navigate to={ROUTES.HOME} replace/>
       },
       {
         path: ROUTES.HOME,
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
-            <Home />
-          </Suspense>
+          <Home/>
         )
       },
       {
         path: ROUTES.DAILY_RBX_COUNTER,
-        element: <Outlet />,
+        element: <Outlet/>,
         children: [
           {
             index: true,
             element: (
-              <Suspense fallback={<div>Loading...</div>}>
-                <DailyRbxCounter />
-              </Suspense>
+              <DailyRbxCounter/>
             )
           },
           {
             path: ROUTES.BC_RBX_COUNTER,
-            element: <Outlet />,
+            element: <Outlet/>,
             children: [
               {
                 index: true,
                 element: (
-                  <Suspense fallback={<div>Loading...</div>}>
-                    <BcRBXCounter />
-                  </Suspense>
+                  <BcRBXCounter/>
                 )
               },
               {
                 path: ROUTES.COUNT,
                 element: (
-                  <Suspense fallback={<div>Loading...</div>}>
-                    <Counter />
-                  </Suspense>
+                  <Counter/>
                 )
               }
             ]
@@ -72,65 +64,53 @@ const router = createBrowserRouter([
       {
         path: ROUTES.SPIN_WHEEL,
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
-            <SpinWheel />
-          </Suspense>
+          <SpinWheel/>
         )
       },
       {
         path: ROUTES.SCRATCH_CARD,
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
-            <ScratchCard />
-          </Suspense>
+          <ScratchCard/>
         )
       },
       {
         path: ROUTES.LUCKY_SCRATCH,
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
-            <ScratchCard />
-          </Suspense>
+          <ScratchCard/>
         )
       },
       {
         path: ROUTES.HOW_TO_WIN,
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
-            <HowToWin />
-          </Suspense>
+          <HowToWin/>
         )
       },
       {
         path: ROUTES.REDEEM,
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
-            <Redeem />
-          </Suspense>
+          <Redeem/>
         )
       },
       {
         path: ROUTES.ABOUT,
-        element: <About />
+        element: <About/>
       },
       {
         path: ROUTES.PRIVACY_POLICY,
-        element: <PrivacyPolicy />
+        element: <PrivacyPolicy/>
       },
       {
         path: ROUTES.TERM_SERVICE,
-        element: <TermsOfService />
+        element: <TermsOfService/>
       },
       {
         path: ROUTES.CONTACT,
-        element: <Contact />
+        element: <Contact/>
       },
       {
         path: ROUTES.QUIZ,
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
             <QuizPage/>
-          </Suspense>
         )
       }
     ]

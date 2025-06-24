@@ -15,12 +15,6 @@
   margin-bottom: 1rem;
 }
 
-.contact-content {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
-}
-
 .contact-info {
   display: flex;
   flex-direction: column;
@@ -107,10 +101,6 @@
 @media (max-width: 768px) {
   .contact-container {
     padding: 1rem;
-  }
-
-  .contact-content {
-    grid-template-columns: 1fr;
   }
 
   .contact-header h1 {

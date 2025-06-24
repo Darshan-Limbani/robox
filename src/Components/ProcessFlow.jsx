@@ -3,16 +3,11 @@ import uFirstRedeem from "../assets/uFirstReedem.svg";
 import uGetReward from "../assets/uGetReward.svg";
 import uRegister from "../assets/uRegister.svg";
 import ArrDown from "../assets/ArrDown.svg";
-import { Ad } from "react-ad-manager";
+import { DefineAdSlot, DefineOutOfPageAdSlot } from "../utils/google-publisher-tag.jsx";
 
 export default function ProcessFlow() {
   return (
     <div className="flex flex-col mt-14 w-full">
-      <Ad
-        adUnit='/21775744923/example/fixed-size-banner'
-        name='div-ad-demo3'
-        size={[300, 250]}
-      />
       <ProcessStep
         title={"User\nRegister"}
         imageSrc={uRegister}
@@ -34,6 +29,13 @@ export default function ProcessFlow() {
         imageSrc={uGetReward}
         imagePosition="right"
         className="mt-4"
+      />
+      <DefineAdSlot size={[300, 250]} adUnit={"/6355419/Travel/Europe/France/Paris"}/>
+      <DefineOutOfPageAdSlot
+        adUnit={"/6355419/Travel"}
+        format={"TOP_ANCHOR"}
+        targeting={[["test", "anchor"]]}
+        key={"input-out-of-page-ad"}
       />
     </div>
   );

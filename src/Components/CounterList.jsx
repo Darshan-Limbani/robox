@@ -1,44 +1,41 @@
 import CounterItem from "./CounterItem";
-import { useNavigate } from "react-router-dom";
-import { ROUTES } from "../utils/constants.js";
-import { Ad } from "react-ad-manager";
+import { DefineAdSlot, DefineOutOfPageAdSlot, RequestAds } from "../utils/google-publisher-tag.jsx";
 
 const CounterList = () => {
-  
-  const navigate = useNavigate();
-  
-  const handleBCClick = (title) => {
-    navigate(ROUTES.COUNT, {
-      state: {
-        title
-      }
-    });
-  }
-  
+  const currentPath = window.location.pathname;
   return (
     <section className="self-center mt-2.5 w-full font-semibold">
-      <CounterItem onClick={() => {
-        handleBCClick("BC Daily Rbx Counter");
-      }} title="BC Robx Counter"/>
-      <Ad
-        adUnit='/21775744923/example/fixed-size-banner'
-        name='div-ad-demo5'
+      <DefineAdSlot
         size={[300, 250]}
+        adUnit={"/6355419/Travel/Europe/France/Paris"}
       />
+      <RequestAds/>
+      <DefineOutOfPageAdSlot
+        adUnit={"/6355419/Travel"}
+        format={"BOTTOM_ANCHOR"}
+        targeting={[["test", "anchor"]]}
+        key={"counter-out-of-page-ad"}
+      />
+      <DefineOutOfPageAdSlot
+        adUnit={"/6355419/Travel/Europe/France/Paris"}
+        format={"INTERSTITIAL"}
+        key={"daily-interstitial-ad"}
+      />
+      
+      <a href={`${currentPath}/count?title=BC%20Daily%20Rbx%20Counter`}>
+        <CounterItem title="BC Robox Counter"/>
+      </a>
+      
       <div className="mt-4">
-        <CounterItem onClick={() => {
-          handleBCClick("TBC Daily Rbx Counter");
-        }} title="TBC Robx Counter"/>
+        <a href={`${currentPath}/count?title=TBC%20Daily%20Rbx%20Counter`}>
+          <CounterItem title="TBC Robox Counter"/>
+        </a>
       </div>
-      <Ad
-        adUnit='/21775744923/example/fixed-size-banner'
-        name='div-ad-demo6'
-        size={[300, 250]}
-      />
+      
       <div className="mt-4">
-        <CounterItem onClick={() => {
-          handleBCClick("OBC Daily Rbx Counter");
-        }} title="OBC Robx Counter"/>
+        <a href={`${currentPath}/count?title=OBC%20Daily%20Rbx%20Counter`}>
+          <CounterItem title="OBC Robox Counter"/>
+        </a>
       </div>
     </section>
   );

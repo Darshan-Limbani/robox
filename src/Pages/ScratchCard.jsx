@@ -13,8 +13,6 @@ const ScratchCard = () => {
   
   const path = location.pathname;
   const [isScratchCard] = useState(path.includes("lucky-scratch"));
-  console.log("Line: 15||ScratchCard.jsx ~~ path: ", path);
-  console.log("Line: 15||ScratchCard.jsx ~~ isScratchCard: ", isScratchCard);
   
   return (
     <main className="flex flex-col text-sm text-black bg-white max-w-[360px] w-full h-full ">

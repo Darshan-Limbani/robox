@@ -39,10 +39,8 @@ export default function Dialog({ open, onClose, onClick, buttonText = "Add", cou
             {count}
           </div>
           
-          {/* Message */}
-          <p className="text-center text-sm">Congratulation you won</p>
+          <p className="text-center text-sm">Congratulation! you won</p>
           
-          {/* Button */}
           <button
             onClick={onClick}
             className="bg-white w-full text-black font-semibold rounded-full px-6 py-2 shadow hover:bg-gray-100 transition"
@@ -50,14 +48,6 @@ export default function Dialog({ open, onClose, onClick, buttonText = "Add", cou
             {buttonText}
           </button>
         </div>
-        
-        {/* Close on background click */}
-        {/*<button*/}
-        {/*  className="absolute top-2 right-3 text-white text-xl"*/}
-        {/*  onClick={onClose}*/}
-        {/*>*/}
-        {/*  &times;*/}
-        {/*</button>*/}
       </div>
     </div>
   );

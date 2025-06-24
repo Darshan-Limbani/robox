@@ -1,9 +1,9 @@
-
-function FeatureCard({ iconSrc, title, description, onClick }) {
+function FeatureCard({ iconSrc, title, description, onClick, href }) {
   
   return (
-    <div
-      onClick={onClick}
+    <a
+      href={href}
+      // onClick={onClick}
       className="gap-5 flex overflow-hidden flex-col items-start self-stretch px-6 py-3.5 my-auto rounded-3xl bg-zinc-100 h-[156px] w-[156px] w-full cursor-pointer">
       <img
         src={iconSrc}
@@ -41,7 +41,7 @@ function FeatureCard({ iconSrc, title, description, onClick }) {
           {description}
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
