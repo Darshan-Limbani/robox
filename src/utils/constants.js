@@ -14,5 +14,5 @@ export const ROUTES = {
   CONTACT:"/contact",
   PRIVACY_POLICY:"/privacy-policy",
   TERM_SERVICE:"/terms-and-service",
-  QUIZ:"/quiz",
+  QUIZ:"/daily-news",
 }

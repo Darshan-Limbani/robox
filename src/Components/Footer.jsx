@@ -26,7 +26,7 @@ const FooterArr = [
 const Footer = () => {
   return (
     <div
-      className={"w-full max-w-[360px] flex flex-col items-center justify-center p-4 bg-gray-100 text-gray-700 text-sm pt-5"}>
+      className={"w-full max-w-[360px] flex flex-col items-center justify-center p-4 bg-gray-100 text-gray-700 text-sm pt-5 mt-2"}>
       <div className={"flex flex-row items-center justify-center  gap-1 mb-3"}>
         {FooterArr.map((item, index) => (
           <Link

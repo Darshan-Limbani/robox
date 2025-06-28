@@ -1,6 +1,8 @@
 import { ROUTES } from "../utils/constants.js";
 import ProfileHeader from "../Components/ProfileHeader.jsx";
-import new_btn from "../assets/new_btn.svg";
+// import new_btn from "../assets/new_btn.svg";
+import new_btn from "../assets/btn_quiz.svg";
+import daily_free_btn from "../assets/daily_free_btn.svg";
 import spin_wheel from "../assets/spin_wheel.svg";
 import win_Scratch from "../assets/win_Scratch.svg";
 import lucky_scratch from "../assets/lucky_scratch.svg";
@@ -16,9 +18,10 @@ const Home = () => {
   const firstRow = [
     {
       imageSrc: new_btn,
-      label: "Daily New RBX",
+      label: "Quiz Game",
       width: "90px",
-      href: ROUTES.DAILY_RBX_COUNTER,
+      // href: ROUTES.DAILY_RBX_COUNTER,
+      href: ROUTES.QUIZ,
     },
     {
       imageSrc: spin_wheel,
@@ -64,6 +67,36 @@ const Home = () => {
     }
   ];
   
+  const thirdRow = [
+    {
+      imageSrc: daily_free_btn,
+      label: "BC Robox Counter",
+      width: "90px",
+      href: `${ROUTES.COUNT}?title=BC%20Daily%20Rbx%20Counter`,
+      // onClick: () => {
+      //   navigate(ROUTES.LUCKY_SCRATCH);
+      // }
+    },
+    {
+      imageSrc: daily_free_btn,
+      label: "TBC Robox Counter",
+      width: "90px",
+      href: `${ROUTES.COUNT}?title=TBC%20Daily%20Rbx%20Counter`,
+      // onClick: () => {
+      //   navigate(ROUTES.HOW_TO_WIN);
+      // }
+    },
+    {
+      imageSrc: daily_free_btn,
+      label: "OBC Robox Counter",
+      width: "90px",
+      href: `${ROUTES.COUNT}?title=OBC%20Daily%20Rbx%20Counter`,
+      // onClick: () => {
+      //   navigate(ROUTES.REDEEM);
+      // }
+    }
+  ];
+  
   
   return (
     <main
@@ -72,6 +105,7 @@ const Home = () => {
       <ProfileHeader
         profileImageSrc={logo}
         title="RBC Counter"
+        onClick={()=>{}}
       />
       {/*<RequestAds/>*/}
       <DefineAdSlot size={[300, 250]} adUnit={"/6355419/Travel/Europe/France/Paris"}/>
@@ -106,6 +140,20 @@ const Home = () => {
           <div className="mt-5">
             <section className="flex gap-5 justify-center items-start w-full">
               {secondRow.map((item, index) => (
+                <IconGridItem
+                  key={index}
+                  imageSrc={item.imageSrc}
+                  label={item.label}
+                  width={item.width}
+                  onClick={item.onClick}
+                  href={item.href}
+                />
+              ))}
+            </section>
+          </div>
+          <div className="mt-5">
+            <section className="flex gap-5 justify-center items-start w-full">
+              {thirdRow.map((item, index) => (
                 <IconGridItem
                   key={index}
                   imageSrc={item.imageSrc}

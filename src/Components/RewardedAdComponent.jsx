@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { usePoints } from "../PointsProvider.jsx";
 
+import { showRewardedPopup } from "../utils/AdConfig.json"
+
 const RewardedAdComponent = (props) => {
   
   const {
@@ -30,7 +32,11 @@ const RewardedAdComponent = (props) => {
         
         window.googletag.pubads().addEventListener('rewardedSlotReady', (event) => {
           setStatus('Rewarded ad slot is ready.');
-          displayModal('reward', 'Watch an ad to receive a special reward?');
+          if (!showRewardedPopup) {
+            handleWatchAd()
+          } else {
+            displayModal('reward', 'Watch an ad to receive a special reward?');
+          }
           // Store the event for later use in makeRewardedVisible
           rewardedSlotRef.current.makeRewardedVisibleEvent = event;
         });

@@ -28,7 +28,7 @@ if (typeof window !== 'undefined') {
     // googletag.pubads().disableInitialLoad();
     
     // Enable SRA and services.
-    googletag.pubads().enableSingleRequest();
+    // googletag.pubads().enableSingleRequest();
     googletag.enableServices();
   });
 }

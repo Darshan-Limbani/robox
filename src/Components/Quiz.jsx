@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
-import { DefineAdSlot, DefineOutOfPageAdSlot } from "../utils/google-publisher-tag.jsx";
+import { DefineAdSlot, DefineOutOfPageAdSlot, RequestAds } from "../utils/google-publisher-tag.jsx";
 import { usePoints } from "../PointsProvider.jsx";
+
+import { showAdAtTop } from "../utils/AdConfig.json"; // Assuming this is a utility to determine ad visibility
 
 const getRandomNumber = (max) => Math.floor(Math.random() * max) + 1;
 
@@ -79,10 +81,13 @@ const Quiz = () => {
   
   return (
     <div className="max-w-2xl mx-auto p-4">
-      <DefineAdSlot
-        size={[300, 250]}
-        adUnit={"/6355419/Travel/Europe/France/Paris"}
-      />
+      <RequestAds/>
+      {showAdAtTop &&
+        <DefineAdSlot
+          size={[300, 250]}
+          adUnit={"/6355419/Travel/Europe/France/Paris"}
+        />
+      }
       <DefineOutOfPageAdSlot
         adUnit={"/6355419/Travel"}
         format={"BOTTOM_ANCHOR"}
@@ -98,7 +103,8 @@ const Quiz = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto p-4">
         {question.options && question.options.map((option) => (
           <div key={option} className="group">
-            <label className="flex items-center gap-3 p-4 bg-white border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-green-500 hover:shadow-md hover:-translate-y-0.5">
+            <label
+              className="flex items-center gap-3 p-4 bg-white border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-green-500 hover:shadow-md hover:-translate-y-0.5">
               <input
                 type="radio"
                 name="option"
@@ -118,9 +124,12 @@ const Quiz = () => {
         </div>
       )}
       
-      {/*<div className="text-center my-6 p-4 bg-blue-50 rounded-lg text-blue-700 text-xl">*/}
-      {/*  <strong>Reward:</strong> ${reward}*/}
-      {/*</div>*/}
+      {!showAdAtTop &&
+        <DefineAdSlot
+          size={[300, 250]}
+          adUnit={"/6355419/Travel/Europe/France/Paris"}
+        />
+      }
     </div>
   );
 };

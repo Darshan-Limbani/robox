@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Wheel } from 'react-custom-roulette'
 import sp0 from "./../assets/sp0.svg"
 import sp3 from "./../assets/sp3.svg"
@@ -138,6 +138,7 @@ const SpinWheelComponent = () => {
     add(reward);
     incrementUsage("spin-wheel");
     setIsOpen(false);
+    window.location.reload();
   }
   
   return (

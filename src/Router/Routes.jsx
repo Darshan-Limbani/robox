@@ -32,6 +32,12 @@ const router = createBrowserRouter([
         )
       },
       {
+        path: ROUTES.COUNT,
+        element: (
+          <Counter/>
+        )
+      },
+      {
         path: ROUTES.DAILY_RBX_COUNTER,
         element: <Outlet/>,
         children: [
