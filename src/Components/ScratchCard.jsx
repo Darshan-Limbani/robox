@@ -42,7 +42,7 @@ const ScratchAndWin = ({ isScratchCard }) => {
       
       <DefineAdSlot size={[300, 250]} adUnit={"/6355419/Travel/Europe/France/Paris"}/>
       {/*<RewardedAdComponent adUnit={"/22639388115/rewarded_web_example"}/>*/}
-      <RewardedAd showDialogFirst={showRewardedPopup} adUnit={"/22639388115/rewarded_web_example"}/>
+      <RewardedAd adUnit={"/22639388115/rewarded_web_example"}/>
       
       <DefineOutOfPageAdSlot
         adUnit={"/6355419/Travel"}

@@ -62,11 +62,11 @@ function DailyRBXCounter() {
           size={[300, 250]}
           adUnit={"/6355419/Travel/Europe/France/Paris"}
         />
-        <DefineOutOfPageAdSlot
-          adUnit={"/6355419/Travel/Europe/France/Paris"}
-          format={"INTERSTITIAL"}
-          key={"daily-interstitial-ad"}
-        />
+        {/*<DefineOutOfPageAdSlot*/}
+        {/*  adUnit={"/6355419/Travel/Europe/France/Paris"}*/}
+        {/*  format={"INTERSTITIAL"}*/}
+        {/*  key={"daily-interstitial-ad"}*/}
+        {/*/>*/}
         <DefineOutOfPageAdSlot
           adUnit={"/6355419/Travel"}
           format={"BOTTOM_ANCHOR"}

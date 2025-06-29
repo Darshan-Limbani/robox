@@ -4,9 +4,6 @@ import back_arr from "../assets/back_arr.svg";
 import { useLocation } from "react-router-dom";
 
 const DailyRbxCounter = () => {
-  
-  const { state } = useLocation();
-  
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const title = params.get("title");

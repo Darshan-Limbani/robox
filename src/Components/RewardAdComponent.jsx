@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { usePoints } from "../PointsProvider.jsx";
+import { showRewardedPopup } from "../utils/AdConfig.json";
 
-const RewardedAd = ({ showDialogFirst = true, adUnit }) => {
+const RewardedAd = ({ adUnit }) => {
   const [status, setStatus] = useState("");
   const [modalType, setModalType] = useState("");
   const [modalMessage, setModalMessage] = useState("");
@@ -36,7 +37,7 @@ const RewardedAd = ({ showDialogFirst = true, adUnit }) => {
           //   };
           // }
           
-          if (showDialogFirst) {
+          if (showRewardedPopup) {
             setModalType("reward");
             setModalMessage("Watch an ad to receive a special reward?");
           } else {
@@ -70,7 +71,7 @@ const RewardedAd = ({ showDialogFirst = true, adUnit }) => {
         window.googletag?.destroySlots([rewardedSlotRef.current]);
       }
     };
-  }, [showDialogFirst]);
+  }, [showRewardedPopup]);
   
   const dismissRewardedAd = () => {
     if (rewardPayloadRef.current) {

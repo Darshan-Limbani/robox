@@ -16,11 +16,11 @@ const CounterList = () => {
         targeting={[["test", "anchor"]]}
         key={"counter-out-of-page-ad"}
       />
-      <DefineOutOfPageAdSlot
-        adUnit={"/6355419/Travel/Europe/France/Paris"}
-        format={"INTERSTITIAL"}
-        key={"daily-interstitial-ad"}
-      />
+      {/*<DefineOutOfPageAdSlot*/}
+      {/*  adUnit={"/6355419/Travel/Europe/France/Paris"}*/}
+      {/*  format={"INTERSTITIAL"}*/}
+      {/*  key={"daily-interstitial-ad"}*/}
+      {/*/>*/}
       
       <a href={`${currentPath}/count?title=BC%20Daily%20Rbx%20Counter`}>
         <CounterItem title="BC Robox Counter"/>

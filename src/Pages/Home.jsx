@@ -1,6 +1,5 @@
 import { ROUTES } from "../utils/constants.js";
 import ProfileHeader from "../Components/ProfileHeader.jsx";
-// import new_btn from "../assets/new_btn.svg";
 import new_btn from "../assets/btn_quiz.svg";
 import daily_free_btn from "../assets/daily_free_btn.svg";
 import spin_wheel from "../assets/spin_wheel.svg";
@@ -11,6 +10,7 @@ import reedem_btn from "../assets/reedem_btn.svg";
 import { IconGridItem } from "../Components/IconGridItem.jsx";
 import { DefineAdSlot, DefineOutOfPageAdSlot } from "../utils/google-publisher-tag.jsx";
 import logo from "../assets/logo.svg"
+import RewardedAd from "../Components/RewardAdComponent.jsx";
 
 
 const Home = () => {
@@ -101,7 +101,7 @@ const Home = () => {
   return (
     <main
       className="flex flex-col h-full text-black bg-white w-full max-w-[360px]">
-      
+      <RewardedAd adUnit={"/22639388115/rewarded_web_example"}/>
       <ProfileHeader
         profileImageSrc={logo}
         title="RBC Counter"
@@ -116,12 +116,12 @@ const Home = () => {
         key={"home-out-of-page-ad"}
       />
       
-      <DefineOutOfPageAdSlot
-        adUnit={"/6355419/Travel/Europe/France/Paris"}
-        format={"INTERSTITIAL"}
-        // targeting={slot.targeting}
-        key={"home-interstitial-ad"}
-      />
+      {/*<DefineOutOfPageAdSlot*/}
+      {/*  adUnit={"/6355419/Travel/Europe/France/Paris"}*/}
+      {/*  format={"INTERSTITIAL"}*/}
+      {/*  // targeting={slot.targeting}*/}
+      {/*  key={"home-interstitial-ad"}*/}
+      {/*/>*/}
       
       <article className="px-px h-full text-sm text-center text-black max-w-[360px] self-center mt-5">
         <div className="w-full py-7 text-sm">
@@ -216,7 +216,6 @@ const Home = () => {
                 <li>Credit Canada: Non-profit support to understand loan obligations and budgeting.</li>
                 <li>BMO: Free financial advice for newcomers and first-time loan applicants.</li>
               </ul>
-              <DefineAdSlot size={[300, 250]} adUnit={"/6355419/Travel/Europe/France/Paris"}/>
               <h3 className={"text-xl font-bold mt-5"}>🇦🇺 Australia – Helping Aussies Borrow Smarter</h3>
               <ul className={"list-disc"}>
                 <li>NAB (National Australia Bank): Offers free loan reviews and borrowing calculators.</li>

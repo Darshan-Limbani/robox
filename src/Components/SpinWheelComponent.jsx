@@ -145,7 +145,7 @@ const SpinWheelComponent = () => {
   
   return (
     <div>
-      <RewardedAd showDialogFirst={showRewardedPopup} adUnit={"/22639388115/rewarded_web_example"}/>
+      <RewardedAd adUnit={"/22639388115/rewarded_web_example"}/>
       <Dialog open={isOpen} buttonText={"Add"} count={reward} onClick={handleAdd}>
       </Dialog>
       <div className={"flex items-center flex-col"}>
