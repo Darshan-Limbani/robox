@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { usePoints } from "../PointsProvider.jsx";
 
-const RewardedAd = ({ showDialogFirst = true }) => {
+const RewardedAd = ({ showDialogFirst = true, adUnit }) => {
   const [status, setStatus] = useState("");
   console.log("Line: 6||RewardAd.jsx ~~ status: ", status);
   const [modalType, setModalType] = useState("");
@@ -10,69 +10,59 @@ const RewardedAd = ({ showDialogFirst = true }) => {
   const rewardedSlotRef = useRef(null);
   const { add } = usePoints();
   useEffect(() => {
-    // Load GPT script
-    const script = document.createElement("script");
-    script.src = "https://securepubads.g.doubleclick.net/tag/js/gpt.js";
-    script.async = true;
-    script.crossOrigin = "anonymous";
-    document.head.appendChild(script);
     
-    script.onload = () => {
-      window.googletag = window.googletag || { cmd: [] };
-      const { googletag } = window;
+    window.googletag = window.googletag || { cmd: [] };
+    const { googletag } = window;
+    
+    googletag.cmd.push(() => {
+      const slot = googletag.defineOutOfPageSlot(
+        adUnit,
+        googletag.enums.OutOfPageFormat.REWARDED
+      );
       
-      googletag.cmd.push(() => {
-        const slot = googletag.defineOutOfPageSlot(
-          "/22639388115/rewarded_web_example",
-          googletag.enums.OutOfPageFormat.REWARDED
-        );
+      if (slot) {
+        rewardedSlotRef.current = slot;
+        slot.addService(googletag.pubads());
         
-        if (slot) {
-          rewardedSlotRef.current = slot;
-          slot.addService(googletag.pubads());
+        googletag.pubads().addEventListener("rewardedSlotReady", (event) => {
+          setStatus("Rewarded ad slot is ready.");
           
-          googletag.pubads().addEventListener("rewardedSlotReady", (event) => {
-            setStatus("Rewarded ad slot is ready.");
-            
-            if (document.getElementById("watchAdButton")) {
-              document.getElementById("watchAdButton").onclick = () => {
-                event.makeRewardedVisible();
-                setStatus("Rewarded ad is active.");
-                setModalType(""); // hide modal
-              };
-            }
-            
-            if (showDialogFirst) {
-              setModalType("reward");
-              setModalMessage("Watch an ad to receive a special reward?");
-            } else {
-              console.log("Line: 46||RewardAd.jsx ~~ event: ", event);
+          if (document.getElementById("watchAdButton")) {
+            document.getElementById("watchAdButton").onclick = () => {
               event.makeRewardedVisible();
               setStatus("Rewarded ad is active.");
-            }
-          });
+              setModalType(""); // hide modal
+            };
+          }
           
-          googletag.pubads().addEventListener("rewardedSlotClosed", dismissRewardedAd);
-          googletag.pubads().addEventListener("rewardedSlotGranted", (event) => {
-            rewardPayloadRef.current = event.payload;
-            add(event.payload.amount || 20);
-            console.log("Line: 57||RewardAd.jsx ~~ event.payload: ", event.payload);
-            setStatus("Reward granted.");
-          });
-          
-          googletag.pubads().addEventListener("slotRenderEnded", (event) => {
-            if (event.slot === rewardedSlotRef.current && event.isEmpty) {
-              setStatus("No ad returned for rewarded ad slot.");
-            }
-          });
-          
-          googletag.enableServices();
-          googletag.display(slot);
-        } else {
-          setStatus("Rewarded ads are not supported on this page.");
-        }
-      });
-    };
+          if (showDialogFirst) {
+            setModalType("reward");
+            setModalMessage("Watch an ad to receive a special reward?");
+          } else {
+            event.makeRewardedVisible();
+            setStatus("Rewarded ad is active.");
+          }
+        });
+        
+        googletag.pubads().addEventListener("rewardedSlotClosed", dismissRewardedAd);
+        googletag.pubads().addEventListener("rewardedSlotGranted", (event) => {
+          rewardPayloadRef.current = event.payload;
+          add(event.payload.amount || 20);
+          setStatus("Reward granted.");
+        });
+        
+        googletag.pubads().addEventListener("slotRenderEnded", (event) => {
+          if (event.slot === rewardedSlotRef.current && event.isEmpty) {
+            setStatus("No ad returned for rewarded ad slot.");
+          }
+        });
+        
+        googletag.enableServices();
+        googletag.display(slot);
+      } else {
+        setStatus("Rewarded ads are not supported on this page.");
+      }
+    });
     
     return () => {
       if (rewardedSlotRef.current) {
@@ -143,7 +133,7 @@ const RewardedAd = ({ showDialogFirst = true }) => {
         }
         .modalDialog {
           margin: auto;
-          padding: 25px;
+          padding: 16px;
           background-color: white;
           text-align: center;
           position: fixed;
@@ -153,11 +143,16 @@ const RewardedAd = ({ showDialogFirst = true }) => {
         }
         .modal input[type="button"] {
           padding: 0.5rem;
-          background: blue;
+          background: rgba(1, 98, 120, 1);
           border: none;
           border-radius: 4px;
           margin: 4px;
           color: white;
+        }
+        .rewardButtons{
+          margin-top: 10px;
+          display:flex;
+          gap: 20px;
         }
       `}</style>
     </div>

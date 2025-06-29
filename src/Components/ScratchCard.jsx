@@ -6,7 +6,8 @@ import { incrementUsage } from "../utils/PointsUtils.js";
 import { usePoints } from "../PointsProvider.jsx";
 import Dialog from "./DialogBox.jsx";
 import { DefineAdSlot, DefineOutOfPageAdSlot } from "../utils/google-publisher-tag.jsx";
-import RewardedAdComponent from "./RewardedAdComponent.jsx";
+import RewardedAd from "./RewardAd.jsx";
+import { showRewardedPopup } from "../utils/AdConfig.json"
 
 
 const reward = [5, 7, 10, 12, 15, 18, 20, 22, 25];
@@ -40,7 +41,8 @@ const ScratchAndWin = ({ isScratchCard }) => {
       </Dialog>
       
       <DefineAdSlot size={[300, 250]} adUnit={"/6355419/Travel/Europe/France/Paris"}/>
-      <RewardedAdComponent adUnit={"/22639388115/rewarded_web_example"}/>
+      {/*<RewardedAdComponent adUnit={"/22639388115/rewarded_web_example"}/>*/}
+      <RewardedAd showDialogFirst={showRewardedPopup} adUnit={"/22639388115/rewarded_web_example"}/>
       
       <DefineOutOfPageAdSlot
         adUnit={"/6355419/Travel"}

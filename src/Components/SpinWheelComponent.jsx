@@ -21,6 +21,7 @@ import { incrementUsage } from "../utils/PointsUtils.js";
 import { DefineAdSlot, DefineOutOfPageAdSlot } from "../utils/google-publisher-tag.jsx";
 // import RewardedAdComponent from "./RewardedAdComponent.jsx";
 import RewardedAd from "./RewardAd.jsx";
+import { showRewardedPopup } from "../utils/AdConfig.json"
 
 const data = [
   {
@@ -144,8 +145,7 @@ const SpinWheelComponent = () => {
   
   return (
     <div>
-      <RewardedAd showDialogFirst={false}/>
-      {/*<RewardedAdComponent adUnit={"/22639388115/rewarded_web_example"}/>*/}
+      <RewardedAd showDialogFirst={showRewardedPopup} adUnit={"/22639388115/rewarded_web_example"}/>
       <Dialog open={isOpen} buttonText={"Add"} count={reward} onClick={handleAdd}>
       </Dialog>
       <div className={"flex items-center flex-col"}>
@@ -160,23 +160,6 @@ const SpinWheelComponent = () => {
           targeting={[["test", "anchor"]]}
           key={"spin-out-of-page-ad"}
         />
-        {/*<DefineOutOfPageAdSlot*/}
-        {/*  adUnit={"/6355419/Travel/Europe/France/Paris"}*/}
-        {/*  format={"REWARDED"}*/}
-        {/*  // targeting={slot.targeting}*/}
-        {/*  key={"spin-interstitial-ad"}*/}
-        {/*/>*/}
-        
-        {/*<div style={{
-          background: "linear-gradient(180deg, #003541 0%, #0088A7 100%)",
-          width: "250px",
-          height: "250px",
-          position: "absolute",
-          top: 0,
-          right: 0,
-          zIndex: -1,
-        }}>
-        </div>*/}
         <div className={"sw-wrapper"} style={{
           background: "linear-gradient(180deg, #003541 0%, #0088A7 100%)",
           borderRadius: "50%",
