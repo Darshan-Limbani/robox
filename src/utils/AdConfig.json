@@ -1,4 +1,106 @@
 {
   "showRewardedPopup": false,
-  "showAdAtTop": false
+  "showQuizAdAtTop": true,
+  "HOME_AD": {
+    "BANNER_SLOT_1": {
+      "size": [300, 250],
+      "adUnit": "/6355419/Travel/Europe/France/Paris"
+    },
+    "BANNER_SLOT_2": {
+      "size": [300, 250],
+      "adUnit": "/6355419/Travel/Europe/France/Paris"
+    },
+    "BANNER_SLOT_3": {
+      "size": [300, 250],
+      "adUnit": "/6355419/Travel/Europe/France/Paris"
+    },
+    "ANCHOR_SLOT_1": {
+      "format": "BOTTOM_ANCHOR",
+      "adUnit": "/6355419/Travel",
+      "targeting": [["test", "anchor"]],
+      "key": "quiz-comp-out-of-page-ad"
+    }
+  },
+  "QUIZ_AD": {
+    "BANNER_SLOT_1": {
+      "size": [300, 250],
+      "adUnit": "/6355419/Travel/Europe/France/Paris"
+    },
+    "ANCHOR_SLOT_1": {
+      "format": "BOTTOM_ANCHOR",
+      "adUnit": "/6355419/Travel",
+      "targeting": [["test", "anchor"]],
+      "key": "quiz-comp-out-of-page-ad"
+    }
+  },
+  "SPIN_AD": {
+    "BANNER_SLOT_1": {
+      "size": [300, 250],
+      "adUnit": "/6355419/Travel/Europe/France/Paris"
+    },
+    "ANCHOR_SLOT_1": {
+      "format": "BOTTOM_ANCHOR",
+      "adUnit": "/6355419/Travel",
+      "targeting": [["test", "anchor"]],
+      "key": "spin-comp-out-of-page-ad"
+    },
+    "REWARD_SLOT_1": {
+      "adUnit": "/22639388115/rewarded_web_example"
+    }
+  },
+  "SCRATCH_AD": {
+    "BANNER_SLOT_1": {
+      "size": [300, 250],
+      "adUnit": "/6355419/Travel/Europe/France/Paris"
+    },
+    "ANCHOR_SLOT_1": {
+      "format": "BOTTOM_ANCHOR",
+      "adUnit": "/6355419/Travel",
+      "targeting": [["test", "anchor"]],
+      "key": "scratch-comp-out-of-page-ad"
+    },
+    "REWARD_SLOT_1": {
+      "adUnit": "/22639388115/rewarded_web_example"
+    }
+  },
+  "HOW_TO_WIN_AD": {
+    "BANNER_SLOT_1": {
+      "size": [300, 250],
+      "adUnit": "/6355419/Travel/Europe/France/Paris"
+    },
+    "BANNER_SLOT_2": {
+      "size": [300, 250],
+      "adUnit": "/6355419/Travel/Europe/France/Paris"
+    },
+    "ANCHOR_SLOT_1": {
+      "format": "BOTTOM_ANCHOR",
+      "adUnit": "/6355419/Travel",
+      "targeting": [["test", "anchor"]],
+      "key": "how-to-comp-out-of-page-ad"
+    }
+  },
+  "REDEEM_AD": {
+    "BANNER_SLOT_1": {
+      "size": [300, 250],
+      "adUnit": "/6355419/Travel/Europe/France/Paris"
+    },
+    "ANCHOR_SLOT_1": {
+      "format": "BOTTOM_ANCHOR",
+      "adUnit": "/6355419/Travel",
+      "targeting": [["test", "anchor"]],
+      "key": "redeem-comp-out-of-page-ad"
+    }
+  },
+  "COUNTER_AD": {
+    "BANNER_SLOT_1": {
+      "size": [300, 250],
+      "adUnit": "/6355419/Travel/Europe/France/Paris"
+    },
+    "ANCHOR_SLOT_1": {
+      "format": "BOTTOM_ANCHOR",
+      "adUnit": "/6355419/Travel",
+      "targeting": [["test", "anchor"]],
+      "key": "counter-comp-out-of-page-ad"
+    }
+  }
 }

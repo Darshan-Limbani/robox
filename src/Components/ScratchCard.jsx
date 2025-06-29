@@ -7,7 +7,7 @@ import { usePoints } from "../PointsProvider.jsx";
 import Dialog from "./DialogBox.jsx";
 import { DefineAdSlot, DefineOutOfPageAdSlot } from "../utils/google-publisher-tag.jsx";
 import RewardedAd from "./RewardAdComponent.jsx";
-import { showRewardedPopup } from "../utils/AdConfig.json"
+import { SCRATCH_AD } from "../utils/AdConfig.json"
 
 
 const reward = [5, 7, 10, 12, 15, 18, 20, 22, 25];
@@ -40,15 +40,15 @@ const ScratchAndWin = ({ isScratchCard }) => {
       <Dialog open={isOpen} buttonText={"Add"} count={reward[randomReward]} onClick={handleAdd}>
       </Dialog>
       
-      <DefineAdSlot size={[300, 250]} adUnit={"/6355419/Travel/Europe/France/Paris"}/>
+      <DefineAdSlot size={SCRATCH_AD.BANNER_SLOT_1.size} adUnit={SCRATCH_AD.BANNER_SLOT_1.adUnit}/>
       {/*<RewardedAdComponent adUnit={"/22639388115/rewarded_web_example"}/>*/}
-      <RewardedAd adUnit={"/22639388115/rewarded_web_example"}/>
+      <RewardedAd adUnit={SCRATCH_AD.REWARD_SLOT_1.adUnit}/>
       
       <DefineOutOfPageAdSlot
-        adUnit={"/6355419/Travel"}
-        format={"BOTTOM_ANCHOR"}
-        targeting={[["test", "anchor"]]}
-        key={`${isScratchCard ? "scratch-out-of-page-ad" : "lucky-scratch-out-of-page-ad"}`}
+        adUnit={SCRATCH_AD.ANCHOR_SLOT_1.adUnit}
+        format={SCRATCH_AD.ANCHOR_SLOT_1.format}
+        targeting={SCRATCH_AD.ANCHOR_SLOT_1.targeting}
+        key={SCRATCH_AD.ANCHOR_SLOT_1.key}
       />
       <span className={"touch-none"}>
       <ScratchCard

@@ -19,9 +19,8 @@ import { usePoints } from "../PointsProvider.jsx";
 import Dialog from "./DialogBox.jsx";
 import { incrementUsage } from "../utils/PointsUtils.js";
 import { DefineAdSlot, DefineOutOfPageAdSlot } from "../utils/google-publisher-tag.jsx";
-// import RewardedAdComponent from "./RewardedAdComponent.jsx";
 import RewardedAd from "./RewardAdComponent.jsx";
-import { showRewardedPopup } from "../utils/AdConfig.json"
+import { SPIN_AD } from "../utils/AdConfig.json"
 
 const data = [
   {
@@ -145,20 +144,20 @@ const SpinWheelComponent = () => {
   
   return (
     <div>
-      <RewardedAd adUnit={"/22639388115/rewarded_web_example"}/>
+      <RewardedAd adUnit={SPIN_AD.REWARD_SLOT_1.adUnit}/>
       <Dialog open={isOpen} buttonText={"Add"} count={reward} onClick={handleAdd}>
       </Dialog>
       <div className={"flex items-center flex-col"}>
         
         <DefineAdSlot
-          size={[300, 250]}
-          adUnit={"/6355419/Travel/Europe/France/Paris"}
+          size={SPIN_AD.BANNER_SLOT_1.size}
+          adUnit={SPIN_AD.BANNER_SLOT_1.adUnit}
         />
         <DefineOutOfPageAdSlot
-          adUnit={"/6355419/Travel"}
-          format={"BOTTOM_ANCHOR"}
-          targeting={[["test", "anchor"]]}
-          key={"spin-out-of-page-ad"}
+          adUnit={SPIN_AD.ANCHOR_SLOT_1.adUnit}
+          format={SPIN_AD.ANCHOR_SLOT_1.format}
+          targeting={SPIN_AD.ANCHOR_SLOT_1.targeting}
+          key={SPIN_AD.ANCHOR_SLOT_1.key}
         />
         <div className={"sw-wrapper"} style={{
           background: "linear-gradient(180deg, #003541 0%, #0088A7 100%)",

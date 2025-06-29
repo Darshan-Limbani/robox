@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { DefineAdSlot, DefineOutOfPageAdSlot, RequestAds } from "../utils/google-publisher-tag.jsx";
 import { usePoints } from "../PointsProvider.jsx";
-
-import { showAdAtTop } from "../utils/AdConfig.json"; // Assuming this is a utility to determine ad visibility
+import { QUIZ_AD } from "../utils/AdConfig.json"
+import { showQuizAdAtTop } from "../utils/AdConfig.json"; // Assuming this is a utility to determine ad visibility
 
 const getRandomNumber = (max) => Math.floor(Math.random() * max) + 1;
 
@@ -82,17 +82,17 @@ const Quiz = () => {
   return (
     <div className="max-w-2xl mx-auto p-4">
       <RequestAds/>
-      {showAdAtTop &&
+      {showQuizAdAtTop &&
         <DefineAdSlot
-          size={[300, 250]}
-          adUnit={"/6355419/Travel/Europe/France/Paris"}
+          size={QUIZ_AD.BANNER_SLOT_1.size}
+          adUnit={QUIZ_AD.BANNER_SLOT_1.adUnit}
         />
       }
       <DefineOutOfPageAdSlot
-        adUnit={"/6355419/Travel"}
-        format={"BOTTOM_ANCHOR"}
-        targeting={[["test", "anchor"]]}
-        key={"quiz-comp-out-of-page-ad"}
+        adUnit={QUIZ_AD.ANCHOR_SLOT_1.adUnit}
+        format={QUIZ_AD.ANCHOR_SLOT_1.format}
+        targeting={QUIZ_AD.ANCHOR_SLOT_1.targeting}
+        key={QUIZ_AD.ANCHOR_SLOT_1.key}
       />
       <div className="text-center my-8 p-4 bg-gray-50 rounded-lg shadow-sm">
         <h2 className="text-2xl font-semibold text-gray-800">
@@ -124,10 +124,10 @@ const Quiz = () => {
         </div>
       )}
       
-      {!showAdAtTop &&
+      {!showQuizAdAtTop &&
         <DefineAdSlot
-          size={[300, 250]}
-          adUnit={"/6355419/Travel/Europe/France/Paris"}
+          size={QUIZ_AD.BANNER_SLOT_1.size}
+          adUnit={QUIZ_AD.BANNER_SLOT_1.adUnit}
         />
       }
     </div>

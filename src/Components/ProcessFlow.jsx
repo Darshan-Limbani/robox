@@ -4,6 +4,7 @@ import uGetReward from "../assets/uGetReward.svg";
 import uRegister from "../assets/uRegister.svg";
 import ArrDown from "../assets/ArrDown.svg";
 import { DefineAdSlot, DefineOutOfPageAdSlot } from "../utils/google-publisher-tag.jsx";
+import { HOW_TO_WIN_AD } from "../utils/AdConfig.json";
 
 export default function ProcessFlow() {
   return (
@@ -30,13 +31,7 @@ export default function ProcessFlow() {
         imagePosition="right"
         className="mt-4"
       />
-      <DefineAdSlot size={[300, 250]} adUnit={"/6355419/Travel/Europe/France/Paris"}/>
-      <DefineOutOfPageAdSlot
-        adUnit={"/6355419/Travel"}
-        format={"TOP_ANCHOR"}
-        targeting={[["test", "anchor"]]}
-        key={"input-out-of-page-ad"}
-      />
+      <DefineAdSlot size={HOW_TO_WIN_AD.BANNER_SLOT_2.size} adUnit={HOW_TO_WIN_AD.BANNER_SLOT_2.adUnit}/>
     </div>
   );
 }

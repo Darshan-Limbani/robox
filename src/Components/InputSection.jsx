@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { DefineAdSlot, DefineOutOfPageAdSlot } from "../utils/google-publisher-tag.jsx";
-
+import {COUNTER_AD} from "../utils/AdConfig.json";
 const InputSection = () => {
   const [days, setDays] = useState();
   const [count, setCount] = useState()
@@ -17,14 +17,14 @@ const InputSection = () => {
   return (
     <section className="px-4 py-2.5 max-sm:px-3 max-sm:py-2.5">
       <DefineAdSlot
-        size={[300, 250]}
-        adUnit={"/6355419/Travel/Europe/France/Paris"}
+        size={COUNTER_AD.BANNER_SLOT_1.size}
+        adUnit={COUNTER_AD.BANNER_SLOT_1.adUnit}
       />
       <DefineOutOfPageAdSlot
-        adUnit={"/6355419/Travel"}
-        format={"BOTTOM_ANCHOR"}
-        targeting={[["test", "anchor"]]}
-        key={"input-out-of-page-ad"}
+        adUnit={COUNTER_AD.ANCHOR_SLOT_1.adUnit}
+        format={COUNTER_AD.ANCHOR_SLOT_1.format}
+        targeting={COUNTER_AD.ANCHOR_SLOT_1.targeting}
+        key={COUNTER_AD.ANCHOR_SLOT_1.key}
       />
       <div className="flex p-6 mb-4 rounded-3xl bg-zinc-100 h-[150px]">
         <input

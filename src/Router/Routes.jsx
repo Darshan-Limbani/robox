@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       {
         path: ROUTES.DAILY_RBX_COUNTER,
         element: <Outlet/>,
-        children: [
+        /*children: [
           {
             index: true,
             element: (
@@ -65,7 +65,7 @@ const router = createBrowserRouter([
               }
             ]
           }
-        ]
+        ]*/
       },
       {
         path: ROUTES.SPIN_WHEEL,
