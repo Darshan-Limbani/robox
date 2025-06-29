@@ -32,6 +32,7 @@ const RewardedAdComponent = (props) => {
         
         window.googletag.pubads().addEventListener('rewardedSlotReady', (event) => {
           setStatus('Rewarded ad slot is ready.');
+          console.log("Rewarded ad slot is ready:", event, showRewardedPopup);
           if (!showRewardedPopup) {
             handleWatchAd()
           } else {
@@ -44,11 +45,13 @@ const RewardedAdComponent = (props) => {
         window.googletag.pubads().addEventListener('rewardedSlotClosed', dismissRewardedAd);
         
         window.googletag.pubads().addEventListener('rewardedSlotGranted', (event) => {
+          console.log("Reward granted:", event);
           rewardPayloadRef.current = event.payload;
           setStatus('Reward granted.');
         });
         
         window.googletag.pubads().addEventListener('slotRenderEnded', (event) => {
+          console.log("Slot render ended:", event);
           if (event.slot === rewardedSlotRef.current && event.isEmpty) {
             setStatus('No ad returned for rewarded ad slot.');
           }

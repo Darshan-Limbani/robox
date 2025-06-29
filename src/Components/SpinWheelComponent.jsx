@@ -19,7 +19,8 @@ import { usePoints } from "../PointsProvider.jsx";
 import Dialog from "./DialogBox.jsx";
 import { incrementUsage } from "../utils/PointsUtils.js";
 import { DefineAdSlot, DefineOutOfPageAdSlot } from "../utils/google-publisher-tag.jsx";
-import RewardedAdComponent from "./RewardedAdComponent.jsx";
+// import RewardedAdComponent from "./RewardedAdComponent.jsx";
+import RewardedAd from "./RewardAd.jsx";
 
 const data = [
   {
@@ -143,7 +144,8 @@ const SpinWheelComponent = () => {
   
   return (
     <div>
-      <RewardedAdComponent adUnit={"/22639388115/rewarded_web_example"}/>
+      <RewardedAd showDialogFirst={false}/>
+      {/*<RewardedAdComponent adUnit={"/22639388115/rewarded_web_example"}/>*/}
       <Dialog open={isOpen} buttonText={"Add"} count={reward} onClick={handleAdd}>
       </Dialog>
       <div className={"flex items-center flex-col"}>
