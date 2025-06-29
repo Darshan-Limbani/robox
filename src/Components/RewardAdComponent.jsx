@@ -7,6 +7,7 @@ const RewardedAd = ({ showDialogFirst = true, adUnit }) => {
   const [modalMessage, setModalMessage] = useState("");
   const rewardPayloadRef = useRef(null);
   const rewardedSlotRef = useRef(null);
+  const eventRef = useRef(null);
   const { add } = usePoints();
   useEffect(() => {
     
@@ -24,15 +25,16 @@ const RewardedAd = ({ showDialogFirst = true, adUnit }) => {
         slot.addService(googletag.pubads());
         
         googletag.pubads().addEventListener("rewardedSlotReady", (event) => {
+          eventRef.current = event;
           setStatus("Rewarded ad slot is ready.");
           
-          if (document.getElementById("watchAdButton")) {
-            document.getElementById("watchAdButton").onclick = () => {
-              event.makeRewardedVisible();
-              setStatus("Rewarded ad is active.");
-              setModalType(""); // hide modal
-            };
-          }
+          // if (document.getElementById("watchAdButton")) {
+          //   document.getElementById("watchAdButton").onclick = () => {
+          //     event.makeRewardedVisible();
+          //     setStatus("Rewarded ad is active.");
+          //     setModalType(""); // hide modal
+          //   };
+          // }
           
           if (showDialogFirst) {
             setModalType("reward");
@@ -83,6 +85,16 @@ const RewardedAd = ({ showDialogFirst = true, adUnit }) => {
     setStatus("Rewarded ad has been closed.");
   };
   
+  const handleWatchAd = ()=>{
+    if (eventRef.current) {
+      eventRef.current.makeRewardedVisible();
+      setStatus("Rewarded ad is active.");
+      setModalType(""); // hide modal
+    } else {
+      setStatus("No ad available to watch.");
+    }
+  }
+  
   return (
     <div>
       <div className={`modal ${modalType ? "show" : ""}`} data-type={modalType}>
@@ -102,7 +114,7 @@ const RewardedAd = ({ showDialogFirst = true, adUnit }) => {
           
           {modalType === "reward" && (
             <span className="rewardButtons">
-              <input type="button" id="watchAdButton" value="Yes"/>
+              <input type="button" id="watchAdButton" value="Yes" onClick={handleWatchAd}/>
               <input
                 id="noRewardButton"
                 type="button"
