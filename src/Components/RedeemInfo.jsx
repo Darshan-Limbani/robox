@@ -6,6 +6,10 @@ import { usePoints } from "../PointsProvider.jsx";
 
 import { REDEEM_AD } from "../utils/AdConfig.json"
 
+import dialog from "../assets/dialog.png";
+import dialogPoly from "../assets/DialogPoly.svg";
+import logo from "../assets/logo.svg";
+
 const Dialog = ({ open, onClose, onClick, buttonText = "Add", count = 0, message }) => {
   if (!open) return null;
   
