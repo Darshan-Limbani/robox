@@ -3,7 +3,6 @@ import { usePoints } from "../PointsProvider.jsx";
 
 const RewardedAd = ({ showDialogFirst = true, adUnit }) => {
   const [status, setStatus] = useState("");
-  console.log("Line: 6||RewardAd.jsx ~~ status: ", status);
   const [modalType, setModalType] = useState("");
   const [modalMessage, setModalMessage] = useState("");
   const rewardPayloadRef = useRef(null);
@@ -86,7 +85,6 @@ const RewardedAd = ({ showDialogFirst = true, adUnit }) => {
   
   return (
     <div>
-      <h1>{status}</h1>
       <div className={`modal ${modalType ? "show" : ""}`} data-type={modalType}>
         <div className="modalDialog">
           <p id="modalMessage">{modalMessage}</p>

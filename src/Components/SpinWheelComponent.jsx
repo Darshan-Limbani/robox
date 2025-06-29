@@ -20,7 +20,7 @@ import Dialog from "./DialogBox.jsx";
 import { incrementUsage } from "../utils/PointsUtils.js";
 import { DefineAdSlot, DefineOutOfPageAdSlot } from "../utils/google-publisher-tag.jsx";
 // import RewardedAdComponent from "./RewardedAdComponent.jsx";
-import RewardedAd from "./RewardAd.jsx";
+import RewardedAd from "./RewardAdComponent.jsx";
 import { showRewardedPopup } from "../utils/AdConfig.json"
 
 const data = [

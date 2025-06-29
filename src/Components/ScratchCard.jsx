@@ -6,7 +6,7 @@ import { incrementUsage } from "../utils/PointsUtils.js";
 import { usePoints } from "../PointsProvider.jsx";
 import Dialog from "./DialogBox.jsx";
 import { DefineAdSlot, DefineOutOfPageAdSlot } from "../utils/google-publisher-tag.jsx";
-import RewardedAd from "./RewardAd.jsx";
+import RewardedAd from "./RewardAdComponent.jsx";
 import { showRewardedPopup } from "../utils/AdConfig.json"
 
 
