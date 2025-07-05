@@ -49,6 +49,9 @@ const InputSection = () => {
       >
         Count Now
       </button>
+      <div>
+        {/* Content here */}
+      </div>
     </section>
   );
 };

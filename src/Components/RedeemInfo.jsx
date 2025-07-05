@@ -115,6 +115,9 @@ export const RedeemInfo = () => {
         <RedeemButton onClick={handleRedeem}>Redeem Server 1</RedeemButton>
         <RedeemButton onClick={handleRedeem}>Redeem Server 2</RedeemButton>
       </div>
+      <div>
+        {/* Content here */}
+      </div>
     </>
   );
 };

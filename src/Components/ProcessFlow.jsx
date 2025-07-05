@@ -32,6 +32,9 @@ export default function ProcessFlow() {
         className="mt-4"
       />
       <DefineAdSlot size={HOW_TO_WIN_AD.BANNER_SLOT_2.size} adUnit={HOW_TO_WIN_AD.BANNER_SLOT_2.adUnit}/>
+      <div>
+        {/* Content here */}
+      </div>
     </div>
   );
 }

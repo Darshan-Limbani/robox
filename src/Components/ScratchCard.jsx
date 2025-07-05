@@ -71,6 +71,9 @@ const ScratchAndWin = ({ isScratchCard }) => {
       
       </ScratchCard>
         </span>
+        <div>
+        {/* Content here */}
+        </div>
     </>
   );
 };

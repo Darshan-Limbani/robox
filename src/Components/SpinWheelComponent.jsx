@@ -201,6 +201,9 @@ const SpinWheelComponent = () => {
       <div className={"mt-[55px]"}>
         <RedeemButton onClick={handleSpinClick}>Spin Now</RedeemButton>
       </div>
+      <div>
+        {/* Content here */}
+      </div>
     </div>
   );
 }
