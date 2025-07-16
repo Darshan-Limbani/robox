@@ -22,6 +22,9 @@
       "adUnit": "/6355419/Travel",
       "targeting": [["test", "anchor"]],
       "key": "quiz-comp-out-of-page-ad"
+    },
+    "REWARD_SLOT_1": {
+      "adUnit": "/22639388115/rewarded_web_example"
     }
   },
   "QUIZ_AD": {
